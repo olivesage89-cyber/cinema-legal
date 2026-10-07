@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#0b0b0e">
+<title>Movie night · Cinema</title>
+<meta property="og:title" content="Movie night?">
+<meta property="og:description" content="Tap to vote">
+<style>
+  :root{ --coral:#F95C4B; --paper:#F6F4F1; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{margin:0;background:#0b0b0e;color:#e9e7e3;min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;
+    display:flex;align-items:center;justify-content:center;
+    padding:max(env(safe-area-inset-top),18px) 18px calc(18px + env(safe-area-inset-bottom));}
+  .wrap{width:300px;max-width:100%;}
+  .card{border-radius:24px;overflow:hidden;background:#131317;
+    box-shadow:0 26px 60px -18px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.07);}
+  .poster{height:min(44vh,360px);min-height:200px;background:#1b1b20 center/cover no-repeat;position:relative;}
+  .poster .g{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(19,19,23,.96));}
+  .body{padding:0 18px 22px;margin-top:-36px;position:relative;text-align:center;}
+  .kick{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:7px;}
+  .ttl{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.15;color:#fff;}
+  .meta{font-size:12.5px;color:#9a978f;margin-top:5px;}
+  .vote{display:flex;gap:14px;justify-content:center;margin-top:18px;}
+  .bub{width:60px;height:60px;border-radius:999px;display:grid;place-items:center;cursor:pointer;
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;}
+  .bub:active{transform:scale(.92);}
+  .bub svg{width:26px;height:26px;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke:#9a978f;}
+  .bub.up svg{stroke:var(--coral);}
+  .bub.up{background:rgba(249,92,75,.14);border-color:rgba(249,92,75,.45);}
+  .bub.picked{background:var(--coral);border-color:var(--coral);}
+  .bub.picked svg{stroke:#fff;}
+  .bub.picked.down{background:#3a3a42;border-color:#55555f;}
+  .lbl{display:flex;gap:14px;justify-content:center;margin-top:8px;}
+  .lbl span{width:60px;text-align:center;font-size:10.5px;font-weight:700;letter-spacing:.04em;color:#8d8a84;}
+  /* results */
+  .res{margin-top:18px;display:none;}
+  .res.on{display:block;}
+  .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;}
+  .bar i{display:block;height:100%;width:0;background:var(--coral);border-radius:999px;transition:width .5s cubic-bezier(.2,.8,.2,1);}
+  .nums{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-top:9px;}
+  .nums .y{color:var(--coral);} .nums .n{color:#9a978f;}
+  .tot{font-size:11.5px;color:#7e7b75;text-align:center;margin-top:8px;}
+  .brand{margin-top:16px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#6f6a62;font-weight:700;text-align:center;}
+  .get{display:block;margin-top:16px;border-radius:16px;padding:14px 0;text-align:center;font-size:15px;font-weight:700;
+    background:var(--paper);color:#17161a;text-decoration:none;}
+  .getnote{font-size:11.5px;color:#7e7b75;text-align:center;margin-top:9px;}
+  .err{text-align:center;color:#9a978f;font-size:14px;line-height:1.6;padding:30px 10px;}
+</style></head>
+<body>
+<div class="wrap" id="wrap">
+  <div class="card">
+    <div class="poster" id="poster"><div class="g"></div></div>
+    <div class="body">
+      <div class="kick">Movie night?</div>
+      <div class="ttl" id="ttl">Loading…</div>
+      <div class="meta" id="meta"></div>
+
+      <div class="vote">
+        <div class="bub up" id="bUp" onclick="castVote(1)"><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></div>
+        <div class="bub down" id="bDown" onclick="castVote(0)"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg></div>
+      </div>
+      <div class="lbl"><span>YES</span><span>NOPE</span></div>
+
+      <div class="res" id="res">
+        <div class="bar"><i id="barY"></i></div>
+        <div class="nums"><span class="y" id="pY">0% yes</span><span class="n" id="pN">0% nope</span></div>
+        <div class="tot" id="tot">no votes yet</div>
+      </div>
+
+      <div class="brand">Cinema</div>
+    </div>
+  </div>
+  <a class="get" id="get" href="https://apps.apple.com/us/app/cinema-identify-movies/id6800555477">Get Cinema</a>
+  <p class="getnote">Identify any movie from a clip</p>
+</div>
+
+<script>
+  var FN   = 'https://pujsrxpveyecbogqnmad.supabase.co/functions/v1/poll';
+  var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB1anNyeHB2ZXllY2JvZ3FubWFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYwNzA0NDksImV4cCI6MjEwMTY0NjQ0OX0.1R4Gfb0VbJwEG-Hhmtgs0RB92PFts_mwf4BEF5pfi00';
+  var POLL = (location.search.match(/[?&]p=([a-z0-9]+)/i)||[])[1]||'';
+  var VOTER = (function(){
+    try{ var v=localStorage.getItem('cinema.voter'); if(v) return v;
+      v=(Date.now().toString(36)+Math.random().toString(36).slice(2,10));
+      localStorage.setItem('cinema.voter',v); return v;
+    }catch(e){ return 'anon'+Math.random().toString(36).slice(2,10); }
+  })();
+
+  function call(body){
+    return fetch(FN,{method:'POST',headers:{'Content-Type':'application/json','apikey':ANON,'Authorization':'Bearer '+ANON},
+      body:JSON.stringify(body)}).then(function(r){ return r.json(); });
+  }
+  function show(d){
+    if(d.title){ document.getElementById('ttl').textContent=d.title; }
+    if(d.meta!==undefined){ document.getElementById('meta').textContent=d.meta||''; }
+    if(d.poster){ document.getElementById('poster').style.backgroundImage='url("'+d.poster+'")'; }
+    var total=d.total||0, yes=d.yes||0;
+    var py = total ? Math.round(yes*100/total) : 0;
+    document.getElementById('res').classList.toggle('on', total>0 || d.mine!==null && d.mine!==undefined);
+    document.getElementById('barY').style.width=py+'%';
+    document.getElementById('pY').textContent=py+'% yes';
+    document.getElementById('pN').textContent=(total?100-py:0)+'% nope';
+    document.getElementById('tot').textContent = total===0 ? 'no votes yet'
+      : (total===1 ? '1 vote' : total+' votes');
+    document.getElementById('bUp').classList.toggle('picked', d.mine===1);
+    document.getElementById('bDown').classList.toggle('picked', d.mine===0);
+  }
+  function castVote(v){
+    if(!POLL) return;
+    try{ if(navigator.vibrate) navigator.vibrate(8); }catch(e){}
+    call({action:'vote',id:POLL,voter:VOTER,vote:v}).then(show).catch(function(){});
+  }
+  if(!POLL){
+    document.getElementById('wrap').innerHTML='<p class="err">This link is missing its poll.<br>Ask whoever sent it to share again.</p>';
+  } else {
+    call({action:'get',id:POLL,voter:VOTER}).then(function(d){
+      if(d && d.error==='not_found'){
+        document.getElementById('wrap').innerHTML='<p class="err">This poll has expired.</p>'; return;
+      }
+      show(d||{});
+    }).catch(function(){
+      document.getElementById('ttl').textContent='Could not load';
+    });
+    setInterval(function(){ call({action:'get',id:POLL,voter:VOTER}).then(show).catch(function(){}); }, 6000);
+  }
+</script>
+</body></html>
