@@ -14,19 +14,19 @@ backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
 opacity:0;pointer-events:none;transition:opacity .2s ease,transform .14s ease}
 #btn.on{opacity:1;pointer-events:auto}
 #btn:active{transform:translate(-50%,-50%) scale(.93)}
-#btn svg{width:24px;height:24px;fill:#fff;stroke:none}
-#btn svg.ln{fill:none;stroke:#fff;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+#btn svg{width:24px;height:24px;fill:#fff}
 </style></head><body><script>
 var k=(location.search.match(/[?&]v=([A-Za-z0-9_-]{5,24})/)||[])[1];
 if(k){
 var HOLD=3600;
 var RESUME=1100;
+var TRIM=5;
 var PLAY='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
 var PAUSE='<svg viewBox="0 0 24 24"><path d="M9 5h3v14H9zM14 5h3v14h-3z"/></svg>';
-var REP='<svg class="ln" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4v5h5"/></svg>';
 var f=document.createElement('iframe');
 f.allow='autoplay; encrypted-media; fullscreen';
-f.src='https://www.youtube.com/embed/'+k+'?autoplay=1&playsinline=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1';
+f.src='https://www.youtube.com/embed/'+k+'?autoplay=1&playsinline=1&controls=0&rel=0&modestbranding=1'+
+'&iv_load_policy=3&disablekb=1&fs=0&loop=1&playlist='+k+'&enablejsapi=1';
 document.body.appendChild(f);
 var t=document.createElement('div');t.id='tap';document.body.appendChild(t);
 var cv=document.createElement('div');cv.id='cv';
@@ -34,7 +34,7 @@ cv.style.backgroundImage="url('https://i.ytimg.com/vi/"+k+"/maxresdefault.jpg'),
 document.body.appendChild(cv);
 var btn=document.createElement('div');btn.id='btn';document.body.appendChild(btn);
 function cmd(fn,a){try{f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}catch(x){}}
-var mode='load', firstPlay=true, T=null, H=null;
+var mode='load', firstPlay=true, T=null, H=null, lastRestart=0;
 function showBtn(icon,autohide){
 clearTimeout(H); btn.innerHTML=icon; btn.classList.add('on');
 if(autohide) H=setTimeout(function(){btn.classList.remove('on')},2500);
@@ -52,12 +52,14 @@ setTimeout(function(){ if(mode==='play'){cv.classList.add('off');hideBtn();} },2
 }
 function doPlay(){mode='play';cmd('playVideo');hideBtn();reveal()}
 function doPause(){mode='pause';clearTimeout(T);cmd('pauseVideo');showCover(PLAY)}
-function finish(){if(mode==='end')return;mode='end';clearTimeout(T);cmd('pauseVideo');showCover(REP)}
+function restart(){
+var now=Date.now(); if(now-lastRestart<2500)return; lastRestart=now;
+cmd('seekTo',[0,true]); cmd('playVideo');
+}
 t.onclick=function(){ if(mode==='play') showBtn(PAUSE,true); };
 cv.onclick=function(){ if(mode==='play') showBtn(PAUSE,true); };
 btn.onclick=function(e){
 e.stopPropagation();
-if(mode==='end'){mode='play';firstPlay=true;cmd('seekTo',[0,true]);doPlay();return}
 if(mode==='play'){doPause();return}
 doPlay();
 };
@@ -65,9 +67,10 @@ addEventListener('message',function(ev){
 if(String(ev.origin).indexOf('youtube')<0)return;
 var d;try{d=JSON.parse(ev.data)}catch(x){return}
 var i=d&&d.info;
-if(i&&i.duration>0&&typeof i.currentTime==='number'&&i.currentTime>=Math.max(1,i.duration-5))finish();
+if(mode==='play' && i && i.duration>0 && typeof i.currentTime==='number' &&
+i.currentTime>=Math.max(1,i.duration-TRIM)) restart();
 var s=(d.event==='onStateChange')?i:(i&&typeof i.playerState==='number'?i.playerState:null);
-if(s===0){finish();return}
+if(s===0){restart();return}
 if(s===1&&mode==='load'){mode='play';reveal()}
 });
 setTimeout(function(){ if(mode==='load'){mode='pause';showCover(PLAY)} },2800);
