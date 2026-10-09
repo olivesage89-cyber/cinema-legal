@@ -4,14 +4,14 @@
 html,body{margin:0;height:100%;background:#000;overflow:hidden;-webkit-user-select:none;user-select:none}
 iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}
 #tap{position:absolute;inset:0;z-index:5}
-#cv{position:absolute;inset:0;z-index:7;background:#000;background-size:cover;background-position:center;transition:opacity .4s ease}
+#cv{position:absolute;inset:0;z-index:7;background:#000;background-size:cover;background-position:center;transition:opacity .35s ease}
 #cv.off{opacity:0;pointer-events:none}
-#cv:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+#cv:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.3)}
 #btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9;
 width:62px;height:62px;border-radius:999px;background:rgba(18,17,21,.5);
 border:1.5px solid rgba(255,255,255,.35);display:grid;place-items:center;
 backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-opacity:0;pointer-events:none;transition:opacity .2s ease,transform .14s ease}
+opacity:0;pointer-events:none;transition:opacity .22s ease,transform .14s ease}
 #btn.on{opacity:1;pointer-events:auto}
 #btn:active{transform:translate(-50%,-50%) scale(.93)}
 #btn svg{width:24px;height:24px;fill:#fff}
@@ -19,8 +19,7 @@ opacity:0;pointer-events:none;transition:opacity .2s ease,transform .14s ease}
 var k=(location.search.match(/[?&]v=([A-Za-z0-9_-]{5,24})/)||[])[1];
 if(k){
 var AUTO=!/[?&]auto=0/.test(location.search);
-var HOLD=3000;
-var RESUME=900;
+var HOLD=1200;
 var TRIM=5;
 var PLAY='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
 var PAUSE='<svg viewBox="0 0 24 24"><path d="M9 5h3v14H9zM14 5h3v14h-3z"/></svg>';
@@ -36,47 +35,38 @@ cv.style.backgroundImage="url('https://i.ytimg.com/vi/"+k+"/hqdefault.jpg')";
 document.body.appendChild(cv);
 var btn=document.createElement('div');btn.id='btn';document.body.appendChild(btn);
 function cmd(fn,a){try{f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}catch(x){}}
-var mode='load', firstPlay=true, T=null, H=null, lastRestart=0;
-function showBtn(icon,autohide){
-clearTimeout(H); btn.innerHTML=icon; btn.classList.add('on');
-if(autohide) H=setTimeout(function(){btn.classList.remove('on')},2500);
+var playing=AUTO, hidden=false, covered=true, T=null, lastRestart=0;
+function draw(){
+cv.classList.toggle('off', !covered);
+var show = !hidden || !playing;
+btn.innerHTML = playing ? PAUSE : PLAY;
+btn.classList.toggle('on', show);
 }
-function hideBtn(){clearTimeout(H);btn.classList.remove('on')}
-function showCover(icon){clearTimeout(T);cv.classList.remove('off');showBtn(icon,false)}
-function reveal(){
+function uncoverSoon(){
 clearTimeout(T);
-var wait=firstPlay?HOLD:RESUME, seek=firstPlay; firstPlay=false;
-T=setTimeout(function(){
-if(mode!=='play')return;
-if(seek)cmd('seekTo',[0,true]);
-setTimeout(function(){ if(mode==='play'){cv.classList.add('off');hideBtn();} },260);
-},wait);
+T=setTimeout(function(){ if(playing){ covered=false; hidden=true; draw(); } }, HOLD);
 }
-function doPlay(){mode='play';cmd('playVideo');hideBtn();reveal()}
-function doPause(){mode='pause';clearTimeout(T);cmd('pauseVideo');showCover(PLAY)}
+function play(){ playing=true; hidden=true; cmd('playVideo'); uncoverSoon(); draw(); }
+function pause(){ playing=false; clearTimeout(T); cmd('pauseVideo'); covered=true; hidden=false; draw(); }
 function restart(){
 var now=Date.now(); if(now-lastRestart<2500)return; lastRestart=now;
 cmd('seekTo',[0,true]); cmd('playVideo');
 }
-t.onclick=function(){ if(mode==='play') showBtn(PAUSE,true); };
-cv.onclick=function(){ if(mode==='play') showBtn(PAUSE,true); };
-btn.onclick=function(e){
-e.stopPropagation();
-if(mode==='play'){doPause();return}
-doPlay();
-};
+function sideTap(){ if(!playing)return; hidden=!hidden; draw(); }
+t.onclick=sideTap;
+cv.onclick=sideTap;
+btn.onclick=function(e){ e.stopPropagation(); if(playing) pause(); else play(); };
 addEventListener('message',function(ev){
 if(String(ev.origin).indexOf('youtube')<0)return;
 var d;try{d=JSON.parse(ev.data)}catch(x){return}
 var i=d&&d.info;
-if(mode==='play' && i && i.duration>0 && typeof i.currentTime==='number' &&
+if(playing && i && i.duration>0 && typeof i.currentTime==='number' &&
 i.currentTime>=Math.max(1,i.duration-TRIM)) restart();
 var s=(d.event==='onStateChange')?i:(i&&typeof i.playerState==='number'?i.playerState:null);
-if(s===0){restart();return}
-if(s===1&&mode==='load'){mode='play';reveal()}
+if(s===0) restart();
 });
-if(AUTO){ setTimeout(function(){ if(mode==='load'){mode='pause';showCover(PLAY)} },2800); }
-else { mode='pause'; showCover(PLAY); }
+if(AUTO){ uncoverSoon(); }
+draw();
 setInterval(function(){try{f.contentWindow.postMessage('{"event":"listening","id":1,"channel":"widget"}','*')}catch(x){}},300);
 }
 </script></body></html>
