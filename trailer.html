@@ -10,21 +10,20 @@ opacity:1;transition:opacity .32s ease}
 #cv.off{opacity:0;pointer-events:none}
 #cv:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.28)}
 #btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(1);z-index:9;
-width:62px;height:62px;border-radius:999px;background:rgba(18,17,21,.5);
-border:1.5px solid rgba(255,255,255,.35);display:grid;place-items:center;
--webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+width:74px;height:74px;border-radius:999px;background:rgba(0,0,0,.55);
+border:0;display:grid;place-items:center;
 opacity:0;pointer-events:none;transition:opacity .26s ease,transform .26s ease}
 #btn.on{opacity:1;pointer-events:auto}
 #btn.hide{transform:translate(-50%,-50%) scale(.86)}
 #btn:active{transform:translate(-50%,-50%) scale(.93)}
-#btn svg{width:24px;height:24px;fill:#fff}
+#btn svg{width:36px;height:36px;fill:#fff}
 </style></head><body><script>
 var k=(location.search.match(/[?&]v=([A-Za-z0-9_-]{5,24})/)||[])[1];
 if(k){
 var HOLD=1100;
 var TRIM=5;
-var PLAY='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-var PAUSE='<svg viewBox="0 0 24 24"><path d="M9 5h3v14H9zM14 5h3v14h-3z"/></svg>';
+var PLAY='<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>';
+var PAUSE='<svg viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>';
 var f=document.createElement('iframe');
 f.allow='autoplay; encrypted-media';
 f.src='https://www.youtube.com/embed/'+k+
