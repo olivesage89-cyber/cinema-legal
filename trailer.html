@@ -73,7 +73,13 @@ i.currentTime>=Math.max(1,i.duration-trimFor(i.duration))) finish();
 var s=(d.event==='onStateChange')?i:(i&&typeof i.playerState==='number'?i.playerState:null);
 if(s===0) finish();
 });
-document.addEventListener('visibilitychange',function(){ if(document.hidden && playing) pause(); });
+document.addEventListener('visibilitychange',function(){
+if(document.hidden && playing){
+playing=false; showBtn=true; clearTimeout(T); clearTimeout(A);
+cmd('pauseVideo'); cmd('seekTo',[0,true]); cmd('pauseVideo');
+cv.classList.remove('off'); draw();
+}
+});
 setInterval(function(){try{f.contentWindow.postMessage('{"event":"listening","id":1,"channel":"widget"}','*')}catch(x){}},300);
 draw();
 }
