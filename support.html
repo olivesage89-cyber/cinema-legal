@@ -1,62 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cinema — Support</title>
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Trailer</title>
 <style>
-  :root{ --ink:#1a1a1e; --muted:#5b5b66; --line:#e6e6ea; --accent:#F95C4B; }
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);max-width:680px;margin:0 auto;padding:56px 22px 96px;line-height:1.62;font-size:16px;}
-  h1{font-size:30px;letter-spacing:-.02em;margin:0 0 6px;}
-  .sub{color:var(--muted);margin-bottom:32px;}
-  h2{font-size:18px;margin:30px 0 6px;}
-  a{color:var(--accent);}
-  .card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0;}
-  details{border-bottom:1px solid var(--line);padding:12px 0;}
-  summary{cursor:pointer;font-weight:600;}
-  details p{color:#2a2a30;margin:8px 0 2px;}
-  footer{color:var(--muted);font-size:13px;margin-top:44px;}
-</style>
-</head>
-<body>
-  <h1>Cinema Support</h1>
-  <div class="sub">Help with identifying titles and subscriptions.</div>
-
-  <div class="card">
-    <strong>Contact us</strong>
-    <p style="margin:8px 0 0;color:#2a2a30">Email <a href="mailto:kingdaniel18000@gmail.com">kingdaniel18000@gmail.com</a> — we usually reply within 1–2 business days.</p>
-  </div>
-
-  <h2>Common questions</h2>
-
-  <details>
-    <summary>How do I identify a movie or show?</summary>
-    <p>Tap ＋ to upload a short video clip, or share a video to Cinema from another app. Cinema's AI recognizes the movie or show and adds it to your collection.</p>
-  </details>
-  <details>
-    <summary>How do subscriptions and the free trial work?</summary>
-    <p>Cinema offers a weekly and an annual plan, both with a 3-day free trial. Subscriptions are billed through your Apple Account and renew automatically until canceled. Manage or cancel anytime in Settings → Apple Account → Subscriptions, or from Cinema's Subscription screen.</p>
-  </details>
-  <details>
-    <summary>How do I restore a purchase?</summary>
-    <p>On the subscription screen tap "Restore purchases" (also available on the paywall). This re-checks your Apple Account for an active subscription.</p>
-  </details>
-  <details>
-    <summary>How do I cancel?</summary>
-    <p>Open Settings → Apple Account → Subscriptions on your device, choose Cinema, and cancel. You keep access until the end of the current billing period. Cinema's Subscription screen also links you straight there.</p>
-  </details>
-  <details>
-    <summary>Do I need an account?</summary>
-    <p>No. Cinema works without signing up — just add a clip and identify it. Your name and collection are stored on your device; deleting the app removes them.</p>
-  </details>
-  <details>
-    <summary>An identification was wrong or didn't work.</summary>
-    <p>Clearer, longer clips identify best. If a result is wrong, try a different scene or upload the clip. Still stuck? Email us the details and we'll help.</p>
-  </details>
-
-  <footer>
-    Cinema · <a href="privacy.html">Privacy Policy</a>
-  </footer>
-</body>
-</html>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;-webkit-user-select:none;user-select:none}
+iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#tap{position:absolute;inset:0;z-index:5}
+#cv{position:absolute;inset:0;z-index:7;background:#000;background-size:cover;background-position:center;transition:opacity .4s ease}
+#cv.off{opacity:0;pointer-events:none}
+#cv:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+#btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9;
+width:62px;height:62px;border-radius:999px;background:rgba(18,17,21,.5);
+border:1.5px solid rgba(255,255,255,.35);display:grid;place-items:center;
+backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+opacity:0;pointer-events:none;transition:opacity .2s ease,transform .14s ease}
+#btn.on{opacity:1;pointer-events:auto}
+#btn:active{transform:translate(-50%,-50%) scale(.93)}
+#btn svg{width:24px;height:24px;fill:#fff;stroke:none}
+#btn svg.ln{fill:none;stroke:#fff;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+</style></head><body><script>
+var k=(location.search.match(/[?&]v=([A-Za-z0-9_-]{5,24})/)||[])[1];
+if(k){
+var HOLD=3600;
+var RESUME=1100;
+var PLAY='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+var PAUSE='<svg viewBox="0 0 24 24"><path d="M9 5h3v14H9zM14 5h3v14h-3z"/></svg>';
+var REP='<svg class="ln" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4v5h5"/></svg>';
+var f=document.createElement('iframe');
+f.allow='autoplay; encrypted-media; fullscreen';
+f.src='https://www.youtube.com/embed/'+k+'?autoplay=1&playsinline=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1';
+document.body.appendChild(f);
+var t=document.createElement('div');t.id='tap';document.body.appendChild(t);
+var cv=document.createElement('div');cv.id='cv';
+cv.style.backgroundImage="url('https://i.ytimg.com/vi/"+k+"/maxresdefault.jpg'),url('https://i.ytimg.com/vi/"+k+"/hqdefault.jpg')";
+document.body.appendChild(cv);
+var btn=document.createElement('div');btn.id='btn';document.body.appendChild(btn);
+function cmd(fn,a){try{f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}catch(x){}}
+var mode='load', firstPlay=true, T=null, H=null;
+function showBtn(icon,autohide){
+clearTimeout(H); btn.innerHTML=icon; btn.classList.add('on');
+if(autohide) H=setTimeout(function(){btn.classList.remove('on')},2500);
+}
+function hideBtn(){clearTimeout(H);btn.classList.remove('on')}
+function showCover(icon){clearTimeout(T);cv.classList.remove('off');showBtn(icon,false)}
+function reveal(){
+clearTimeout(T);
+var wait=firstPlay?HOLD:RESUME, seek=firstPlay; firstPlay=false;
+T=setTimeout(function(){
+if(mode!=='play')return;
+if(seek)cmd('seekTo',[0,true]);
+setTimeout(function(){ if(mode==='play'){cv.classList.add('off');hideBtn();} },260);
+},wait);
+}
+function doPlay(){mode='play';cmd('playVideo');hideBtn();reveal()}
+function doPause(){mode='pause';clearTimeout(T);cmd('pauseVideo');showCover(PLAY)}
+function finish(){if(mode==='end')return;mode='end';clearTimeout(T);cmd('pauseVideo');showCover(REP)}
+t.onclick=function(){ if(mode==='play') showBtn(PAUSE,true); };
+cv.onclick=function(){ if(mode==='play') showBtn(PAUSE,true); };
+btn.onclick=function(e){
+e.stopPropagation();
+if(mode==='end'){mode='play';firstPlay=true;cmd('seekTo',[0,true]);doPlay();return}
+if(mode==='play'){doPause();return}
+doPlay();
+};
+addEventListener('message',function(ev){
+if(String(ev.origin).indexOf('youtube')<0)return;
+var d;try{d=JSON.parse(ev.data)}catch(x){return}
+var i=d&&d.info;
+if(i&&i.duration>0&&typeof i.currentTime==='number'&&i.currentTime>=Math.max(1,i.duration-5))finish();
+var s=(d.event==='onStateChange')?i:(i&&typeof i.playerState==='number'?i.playerState:null);
+if(s===0){finish();return}
+if(s===1&&mode==='load'){mode='play';reveal()}
+});
+setTimeout(function(){ if(mode==='load'){mode='pause';showCover(PLAY)} },2800);
+setInterval(function(){try{f.contentWindow.postMessage('{"event":"listening","id":1,"channel":"widget"}','*')}catch(x){}},300);
+}
+</script></body></html>
