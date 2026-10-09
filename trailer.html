@@ -21,7 +21,7 @@ opacity:0;pointer-events:none;transition:opacity .26s ease,transform .26s ease}
 var k=(location.search.match(/[?&]v=([A-Za-z0-9_-]{5,24})/)||[])[1];
 if(k){
 var HOLD=1100;
-var TRIM=5;
+function trimFor(dur){ return dur>=90 ? 19 : (dur>=45 ? 12 : Math.max(3, dur*0.12)); }
 var PLAY='<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>';
 var PAUSE='<svg viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>';
 var f=document.createElement('iframe');
@@ -65,7 +65,7 @@ if(String(ev.origin).indexOf('youtube')<0)return;
 var d;try{d=JSON.parse(ev.data)}catch(x){return}
 var i=d&&d.info;
 if(playing && i && i.duration>0 && typeof i.currentTime==='number' &&
-i.currentTime>=Math.max(1,i.duration-TRIM)) finish();
+i.currentTime>=Math.max(1,i.duration-trimFor(i.duration))) finish();
 var s=(d.event==='onStateChange')?i:(i&&typeof i.playerState==='number'?i.playerState:null);
 if(s===0) finish();
 });
