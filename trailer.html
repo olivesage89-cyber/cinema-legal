@@ -3,8 +3,8 @@
 <style>
 html,body{margin:0;height:100%;background:#000;overflow:hidden;
 -webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
-#yt,#yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-#yt iframe{pointer-events:none}
+#ytwrap{position:absolute;inset:0;z-index:1}
+#ytwrap iframe,#ytwrap #yt{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}
 #ui{position:absolute;inset:0;z-index:5}
 #cv{position:absolute;inset:0;z-index:7;background:#000;background-size:cover;background-position:center;
 opacity:1;transition:opacity .32s ease}
@@ -20,7 +20,7 @@ opacity:0;pointer-events:none;transition:opacity .26s ease,transform .26s ease}
 #btn svg{width:36px;height:36px;fill:#fff}
 </style></head>
 <body>
-<div id="yt"></div>
+<div id="ytwrap"><div id="yt"></div></div>
 <div id="ui"></div>
 <div id="cv"></div>
 <div id="btn"></div>
