@@ -23,6 +23,7 @@ if(k){
 var HOLD=1100;
 function trimFor(dur){ return dur>=120 ? 50 : (dur>=90 ? 35 : (dur>=45 ? 18 : Math.max(4, dur*0.18))); }
 var PLAY='<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>';
+var PAUSE='<svg viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>';
 var f=document.createElement('iframe');
 f.allow='autoplay; encrypted-media';
 f.src='https://www.youtube.com/embed/'+k+
