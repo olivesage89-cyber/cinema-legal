@@ -8,29 +8,30 @@
   html,body{margin:0;padding:0;height:100%;background:#000;overflow:hidden;
     -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;}
   iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-  /* Sits on top of the player so none of YouTube's own buttons, titles or logos
-     can ever appear. Tapping it plays/pauses through the player's API instead. */
   #tap{position:absolute;top:0;left:0;right:0;bottom:0;z-index:5;background:transparent;}
-  #glyph{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;
-    width:58px;height:58px;border-radius:999px;background:rgba(18,17,21,.46);
+  .circ{width:58px;height:58px;border-radius:999px;background:rgba(18,17,21,.46);
     border:1.5px solid rgba(255,255,255,.34);display:grid;place-items:center;
-    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);}
+  .circ svg{width:23px;height:23px;fill:none;stroke:#fff;stroke-width:2.1;
+    stroke-linecap:round;stroke-linejoin:round;}
+  #glyph{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;
     opacity:0;transition:opacity .22s ease;pointer-events:none;}
   #glyph.show{opacity:1;}
-  #glyph svg{width:22px;height:22px;fill:#fff;margin-left:3px;}
+  #glyph svg{fill:#fff;stroke:none;margin-left:3px;}
+  #end{position:absolute;top:0;left:0;right:0;bottom:0;z-index:7;display:none;
+    place-items:center;background-size:cover;background-position:center;cursor:pointer;}
+  #end.show{display:grid;}
+  #end .scrim{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.42);}
+  #end .circ{position:relative;}
   .msg{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);text-align:center;
        font:600 14px -apple-system,system-ui,sans-serif;color:#8f8b83;}
 </style>
 </head>
 <body>
 <script>
-/* Cinema — trailer host page.
-   The app loads this page in a frame and passes a YouTube id: trailer.html?v=KEY
-   It exists because the app's own pages load from local files, and YouTube refuses to
-   play with no real web address behind the player (error 153). Served from GitHub Pages
-   there is one, so playback works.
-   The player's own interface is switched off and covered, so the viewer sees only video. */
 (function(){
+  var END_TRIM = 5;
+
   var m = location.search.match(/[?&]v=([A-Za-z0-9_-]{5,24})/);
   var key = m ? m[1] : '';
   if(!key){ document.body.innerHTML = '<div class="msg">No trailer</div>'; return; }
@@ -44,38 +45,74 @@
           '&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&enablejsapi=1';
   document.body.appendChild(f);
 
-  var tap   = document.createElement('div'); tap.id='tap';
-  var glyph = document.createElement('div'); glyph.id='glyph';
-  glyph.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+  var tap = document.createElement('div'); tap.id='tap';
   document.body.appendChild(tap);
+
+  var glyph = document.createElement('div'); glyph.id='glyph'; glyph.className='circ';
+  glyph.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
   document.body.appendChild(glyph);
 
-  function cmd(fn){
-    try{ f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:[]}),'*'); }catch(e){}
+  var end = document.createElement('div'); end.id='end';
+  end.style.backgroundImage = "url('https://i.ytimg.com/vi/"+key+"/maxresdefault.jpg'),"+
+                              "url('https://i.ytimg.com/vi/"+key+"/hqdefault.jpg')";
+  end.innerHTML = '<div class="scrim"></div><div class="circ">'+
+    '<svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4v5h5"/></svg></div>';
+  document.body.appendChild(end);
+
+  function cmd(fn,args){
+    try{ f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:args||[]}),'*'); }catch(e){}
   }
 
-  var playing = true;
+  var playing = true, finished = false;
+
+  function finish(){
+    if(finished) return;
+    finished = true;
+    cmd('pauseVideo');
+    glyph.classList.remove('show');
+    end.classList.add('show');
+  }
+
+  end.addEventListener('click', function(e){
+    e.preventDefault(); e.stopPropagation();
+    finished = false; playing = true;
+    end.classList.remove('show');
+    cmd('seekTo',[0,true]);
+    cmd('playVideo');
+  });
+
   tap.addEventListener('click', function(e){
     e.preventDefault();
+    if(finished) return;
     playing = !playing;
     cmd(playing ? 'playVideo' : 'pauseVideo');
     glyph.classList.toggle('show', !playing);
   });
 
-  /* keep our play/pause glyph honest if the player changes state on its own (e.g. it ends) */
   window.addEventListener('message', function(ev){
     if(String(ev.origin||'').indexOf('youtube') < 0) return;
     var d; try{ d = JSON.parse(ev.data); }catch(err){ return; }
+    if(!d) return;
+
+    var info = d.info;
+    if(d.event === 'infoDelivery' && info && typeof info.duration === 'number' && info.duration > 0 &&
+       typeof info.currentTime === 'number'){
+      if(info.currentTime >= Math.max(1, info.duration - END_TRIM)) finish();
+    }
+
     var st;
-    if(d && d.event === 'onStateChange') st = d.info;
-    else if(d && d.event === 'infoDelivery' && d.info && typeof d.info.playerState === 'number') st = d.info.playerState;
+    if(d.event === 'onStateChange') st = info;
+    else if(d.event === 'infoDelivery' && info && typeof info.playerState === 'number') st = info.playerState;
     if(typeof st !== 'number') return;
+    if(st === 0){ finish(); return; }
+    if(finished) return;
     if(st === 1){ playing = true;  glyph.classList.remove('show'); }
-    if(st === 2 || st === 0){ playing = false; glyph.classList.add('show'); }
+    if(st === 2){ playing = false; glyph.classList.add('show'); }
   });
+
   setInterval(function(){
     try{ f.contentWindow.postMessage(JSON.stringify({event:'listening',id:1,channel:'widget'}),'*'); }catch(e){}
-  }, 600);
+  }, 350);
 })();
 </script>
 </body>
