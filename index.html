@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cinema: find a movie for any mood</title>
+<meta name="description" content="Cinema is an iPhone app that finds the perfect movie or show for whatever mood you're in. Just describe it. It can also identify any movie from a clip.">
+<meta property="og:title" content="Cinema: find a movie for any mood">
+<meta property="og:description" content="Describe your mood. Get the perfect movie. Identify any movie from a clip.">
+<meta name="theme-color" content="#0b0b0e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+/* Cinema homepage: hero with a phone showing a mood search, three features, then download. */
+:root{
+  --ink:#0b0b0e; --panel:#151419; --line:rgba(246,244,241,.10);
+  --paper:#F6F4F1; --stone:#E4DED2; --muted:#a29d95; --coral:#F95C4B;
+  --display:"Bricolage Grotesque", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --body:"DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left))}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;margin:0}
+:focus-visible{outline:3px solid var(--paper);outline-offset:3px;border-radius:6px}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.logo{display:flex;align-items:center;gap:10px;font:800 22px var(--display);letter-spacing:-.02em;text-decoration:none}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--coral);display:grid;place-items:center;font-style:normal}
+.logo svg{width:16px;height:16px}
+.navlinks{display:flex;gap:22px;font-size:15px;color:var(--stone)}
+.navlinks a{text-decoration:none} .navlinks a:hover{color:var(--paper)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:40px 0 80px}
+.kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:16px}
+.hero h1{font-size:clamp(44px,6.4vw,78px);line-height:.98;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero p{font-size:20px;color:var(--stone);max-width:30ch;margin:22px 0 30px}
+.store{display:inline-flex;align-items:center;gap:12px;background:var(--paper);color:var(--ink);text-decoration:none;border-radius:16px;padding:12px 22px 12px 18px;transition:transform .15s ease}
+.store:hover{transform:translateY(-2px)} .store:active{transform:scale(.98)}
+.store svg{width:28px;height:28px}
+.store span{display:grid;line-height:1.1} .store small{font-size:12px} .store b{font:700 20px var(--display);letter-spacing:-.02em}
+.note{display:block;margin-top:14px;font-size:14px;color:var(--muted)}
+
+/* phone */
+.phone{justify-self:center;width:min(320px,80vw);aspect-ratio:9/19.3;border-radius:46px;padding:12px;background:#1c1b20;border:1px solid var(--line);box-shadow:0 40px 120px rgba(249,92,75,.18),0 30px 60px rgba(0,0,0,.6);transform:rotate(3deg)}
+.screen{height:100%;border-radius:36px;background:#0e0e12;overflow:hidden;position:relative;padding:54px 16px 16px;display:flex;flex-direction:column;gap:14px}
+.screen::before{content:"";position:absolute;top:12px;left:50%;width:96px;height:28px;margin-left:-48px;border-radius:20px;background:#000}
+.stitle{text-align:center;font:800 17px var(--display)}
+.bubble{align-self:flex-end;max-width:85%;background:var(--coral);color:#fff;font-weight:700;font-size:14px;line-height:1.25;padding:10px 14px;border-radius:18px 18px 4px 18px;min-height:40px}
+.bubble::after{content:"|";animation:blink 1s steps(2) infinite;font-weight:400;margin-left:1px}
+@keyframes blink{50%{opacity:0}}
+.intro{font-size:12.5px;color:var(--muted);opacity:0;transition:opacity .4s ease}
+.rowt{font:800 14px var(--display);opacity:0;transition:opacity .4s ease}
+.posters{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.posters div{aspect-ratio:2/3;border-radius:10px;opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease}
+.show .intro,.show .rowt{opacity:1}
+.show .posters div{opacity:1;transform:none}
+.sbar{margin-top:auto;border:1.5px solid var(--coral);border-radius:999px;padding:10px 14px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.sbar svg{width:14px;height:14px;color:var(--coral)}
+
+/* features */
+section{padding:70px 0;border-top:1px solid var(--line)}
+.secth{font-size:clamp(32px,4.4vw,48px);line-height:1.05;max-width:16ch;margin-bottom:36px}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px}
+.feat .ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:rgba(249,92,75,.14);color:var(--coral);margin-bottom:18px}
+.feat .ic svg{width:22px;height:22px}
+.feat h3{font-size:22px;margin-bottom:8px}
+.feat p{margin:0;color:var(--stone);font-size:16px}
+.feat q{display:block;margin-top:14px;font-size:14px;color:var(--muted);quotes:"\201C" "\201D"}
+
+/* moods */
+.moods{display:flex;flex-wrap:wrap;gap:10px}
+.moods span{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:9px 16px;font-size:15px;color:var(--stone)}
+
+/* cta */
+.cta{text-align:center}
+.cta h2{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:0 auto 14px;max-width:16ch}
+.cta p{color:var(--stone);margin:0 0 28px}
+
+footer{border-top:1px solid var(--line);padding:30px 0 calc(30px + env(safe-area-inset-bottom));display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;color:var(--muted);font-size:14px}
+footer nav{padding:0;gap:20px;display:flex;flex-wrap:wrap}
+footer a{text-decoration:none} footer a:hover{color:var(--paper)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:20px}
+  .hero p{margin-left:auto;margin-right:auto}
+  .phone{transform:none;margin-top:10px;text-align:left}
+  .feats{grid-template-columns:1fr}
+  .navlinks{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .store:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="logo" href="./"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l11-6.5z"/></svg></i>Cinema</a>
+    <div class="navlinks"><a href="#features">Features</a><a href="creators">Creators</a><a href="#download">Download</a></div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <span class="kicker">For iPhone</span>
+      <h1>The perfect movie for <em>any mood.</em></h1>
+      <p>Just describe how you feel. Cinema finds what to watch tonight.</p>
+      <a class="store" href="https://apps.apple.com/us/app/cinema-identify-movies/id6800555477" aria-label="Download Cinema on the App Store">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.33-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.2.77 1.11 1.68 2.35 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.72c1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.47-3.69zM14.08 5.84c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.78-.97 2.83 1.03.08 2.07-.52 2.71-1.29z"/></svg>
+        <span><small>Download on the</small><b>App Store</b></span>
+      </a>
+      <span class="note">Free to try</span>
+    </div>
+
+    <div class="phone" aria-hidden="true">
+      <div class="screen" id="screen">
+        <div class="stitle">Search</div>
+        <div class="bubble" id="bubble"></div>
+        <div class="intro" id="intro"></div>
+        <div class="rowt">Most Watched</div>
+        <div class="posters" id="p1"><div></div><div></div><div></div></div>
+        <div class="rowt" id="row2">Comfort Rewatches</div>
+        <div class="posters" id="p2"><div></div><div></div><div></div></div>
+        <div class="sbar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search or describe…</div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2 class="secth">Stop scrolling. Start watching.</h2>
+    <div class="feats">
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div>
+        <h3>Describe a mood</h3>
+        <p>Type it the way you'd say it. Cinema understands the feeling, not just the genre.</p>
+        <q>rainy night, something cozy</q>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></div>
+        <h3>Identify any clip</h3>
+        <p>Saw a scene on TikTok or Reels? Share it to Cinema and find out what it's from.</p>
+        <q>what movie is this from?</q>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 20v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+        <h3>Movie night, sorted</h3>
+        <p>Send friends a movie and let them vote yes or nope. No more endless debating.</p>
+        <q>movie night?</q>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="secth">Try asking for…</h2>
+    <div class="moods">
+      <span>heartbroken, need a hug</span><span>can't sleep</span><span>need a good laugh</span><span>mind-bending</span>
+      <span>90s comfort movies</span><span>sad but hopeful</span><span>cozy Halloween</span><span>girls' night</span>
+      <span>something to cry to</span><span>edge of my seat</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="download">
+  <div class="wrap">
+    <h2>Tonight's movie is one search away.</h2>
+    <p>Free to download on iPhone.</p>
+    <a class="store" href="https://apps.apple.com/us/app/cinema-identify-movies/id6800555477" aria-label="Download Cinema on the App Store">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.33-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.2.77 1.11 1.68 2.35 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.72c1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.47-3.69zM14.08 5.84c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.78-.97 2.83 1.03.08 2.07-.52 2.71-1.29z"/></svg>
+      <span><small>Download on the</small><b>App Store</b></span>
+    </a>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Cinema</span>
+    <nav aria-label="Footer"><a href="creators">Creators</a><a href="privacy.html">Privacy</a></nav>
+  </footer>
+</div>
+
+<script>
+/* the phone types a mood, then "results" fade in; loops through a few moods */
+(function(){
+  var moods=[
+    {q:"rainy night, something cozy", i:"Warm, slow and comforting. Grab a blanket.", r:"Comfort Rewatches",
+     c:[["#2c3e50","#e8b86d"],["#5b3a29","#f2c78e"],["#1f4e5f","#a8d5ba"],["#6b2d3c","#f4a6a6"],["#2d4a3e","#e9d8a6"],["#3b3355","#c9b6e4"]]},
+    {q:"movies that'll mess with my head", i:"Twists you won't see coming.", r:"Twist Endings",
+     c:[["#0f2027","#2c5364"],["#1a1a2e","#e94560"],["#141e30","#35577d"],["#232526","#8e9eab"],["#2b1055","#7597de"],["#200122","#6f0000"]]},
+    {q:"need a good laugh", i:"Big laughs, zero effort.", r:"Feel-Good Comedies",
+     c:[["#f7971e","#ffd200"],["#ee0979","#ff6a00"],["#56ab2f","#a8e063"],["#f953c6","#b91d73"],["#36d1dc","#5b86e5"],["#ff512f","#f09819"]]}
+  ];
+  var b=document.getElementById("bubble"), intro=document.getElementById("intro"), row2=document.getElementById("row2"),
+      scr=document.getElementById("screen"), cells=[].slice.call(document.querySelectorAll(".posters div")), k=0;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function paint(m){ cells.forEach(function(d,j){ var c=m.c[j%m.c.length]; d.style.background="linear-gradient(160deg,"+c[0]+","+c[1]+")"; d.style.transitionDelay=(j*70)+"ms"; });
+    intro.textContent=m.i; row2.textContent=m.r; }
+  function run(){
+    var m=moods[k%moods.length]; k++; scr.classList.remove("show"); b.textContent="";
+    if(reduce){ b.textContent=m.q; paint(m); scr.classList.add("show"); return; }
+    var n=0, t=setInterval(function(){ n++; b.textContent=m.q.slice(0,n);
+      if(n>=m.q.length){ clearInterval(t); setTimeout(function(){ paint(m); scr.classList.add("show"); setTimeout(run,3800); },500); } },55);
+  }
+  run();
+})();
+</script>
+</body>
+</html>
