@@ -11,6 +11,21 @@ Don't repeat the previous slideshow's look (record a one-line style note in used
 Quality bar = the user's references: MUBI / Blackbars / film-account posts that make you stop scrolling.
 Approved examples: https://getcinema.app/slides/sweater-weather-v2/ (01_cover.jpg … 07_cinema.jpg).
 
+## COLOUR & TYPE VARIETY (the user called this out — it matters a lot)
+Look at a film account's profile grid: every post has a DIFFERENT text colour and type treatment — pink script on
+one, red on the next, cream serif caps, white, yellow condensed, magenta… A couple may share a colour, never all.
+Butter yellow is just ONE option. Rules:
+- Pick the title colour PER POST from the cover image: run `python3 palette.py cover.jpg` and choose its 'pop'
+  (a saturated colour already in the frame — the red coat, the pink sky), 'contrast' (complementary hue) or 'soft'
+  (cream/blush/mint) — whichever is most striking AND readable on that image.
+- Never use the same title colour as either of the previous 2 posts; record it in used.txt ("colour: #E8577A pink").
+- Vary the type too: script vs condensed caps vs elegant serif; mix them inside one title (e.g. big script word +
+  small spaced serif caps + a condensed word), different sizes per word, overlapping/staggered lines. Record the
+  treatment in used.txt so the next post looks different.
+- Inside slides can use their own accent colour per film (sampled from each film's still) — e.g. title colour pulled
+  from that film's frame, like the Blackbars/Babygirl-green, Challengers-red examples.
+- Videos too: set "ink" in video.json per post (and vary the overlay fonts).
+
 ## Cover vs inside slides
 The COVER is the hook — make it a stunning film-poster image (one gorgeous still, beautiful type, grade, grain).
 The INSIDE slides do NOT have to match the cover's style. Pick one inside layout per slideshow from the library
