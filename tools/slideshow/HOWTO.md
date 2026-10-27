@@ -84,3 +84,25 @@ CHECK: extract frames at several timestamps and look — panels filled (no black
 nothing awkward. Vary the look week to week like the slideshows (ink colour, fonts in stillvid.py overlay_html,
 panel count/layout, single full-bleed clips with title+year like the A24-list reference) — the stacked layout is one option.
 Needs fonts: npm i @fontsource/pinyon-script @fontsource/cormorant-garamond (node_modules next to stillvid.py).
+
+
+## APP SCREEN (approved — use exactly this look, every post)
+appshot.js recreates Cinema's real native search-results screen (from Native/SearchView.swift) inside an iPhone frame.
+The user approved it as "perfect, always like this". Rules:
+- The Cinema slide (last slide of every slideshow / the IG carousel) = ONLY the framed phone (phone.png) centred on a
+  clean background (plain colour that fits the post's palette, or a softly blurred still). NO text on that slide —
+  no headline, no app name, no "app store". Same for the video end card: the phone, no text.
+- The screen shows the post's mood as the search bubble (query), a 1–2 sentence intro, and 3 rows:
+  "Top Results" = the post's 5 films (in order), then 2 more rows of real, fitting titles with short row names.
+  Get posters from TMDB (w500) into the work dir.
+- Build: write DIR/app.json {query, intro, rows:{name:[poster files]}} then `node appshot.js DIR` → screen.png
+  (1206x2622) + phone.png (transparent, framed). Then composite phone.png onto the background with PIL:
+  slide 1080x1350 (phone height ≈ 1180px, centred), video end card 1080x1920 (phone height ≈ 1600px).
+  Needs: npm i @fontsource/inter.
+
+## CAPTIONS (all posts)
+Format, nothing else:
+  <title of the post>
+  <one short description line>
+  <mention the app: found with Cinema — type a feeling, get the films>
+  <4–6 hashtags>

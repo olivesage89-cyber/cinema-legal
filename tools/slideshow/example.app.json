@@ -1,0 +1,39 @@
+{
+ "query": "cozy autumn night",
+ "intro": "Warm, golden, slow-paced picks for a crisp night in, with a blanket and something hot to drink.",
+ "rows": {
+  "Top Results": [
+   "8319581105388578259.jpg",
+   "3578186398146977455.jpg",
+   "3402077387566211010.jpg",
+   "4412988308447019986.jpg",
+   "745730996146830523.jpg"
+  ],
+  "Small-Town Autumn": [
+   "1580701231566904026.jpg",
+   "7686314235789495598.jpg",
+   "2855805311655987781.jpg",
+   "5116384382471763515.jpg",
+   "5121868013928074149.jpg"
+  ],
+  "Rainy Day Comfort": [
+   "3537990668640152468.jpg",
+   "5813489409733356493.jpg",
+   "6716482683939873724.jpg",
+   "8536058941917763090.jpg",
+   "3504642571918637548.jpg"
+  ]
+ },
+ "slides": [
+  {
+   "file": "slide_cream.jpg",
+   "css": ".slide{width:360px;height:450px;background:#EFE9DD;position:relative;overflow:hidden;font-family:SF}.t{position:absolute;top:30px;width:100%;text-align:center;font-weight:700;font-size:21px;letter-spacing:-.3px;color:#1d1b19}.s{position:absolute;top:58px;width:100%;text-align:center;font-size:12.5px;color:#6d665d}.ph-wrap{position:absolute;left:50%;top:86px;transform:translateX(-50%) scale(.355);transform-origin:top center}",
+   "html": "<div class='t'>type a feeling. get the films.</div><div class='s'>Cinema \u00b7 free on the App Store</div>{PHONE}"
+  },
+  {
+   "file": "slide_still.jpg",
+   "css": ".slide{width:360px;height:450px;position:relative;overflow:hidden;font-family:SF;background:url(file:///root/au/v2/end.jpg) center/cover}.slide:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.15) 40%,rgba(0,0,0,.55))}.t{position:absolute;top:28px;width:100%;text-align:center;font-weight:700;font-size:20px;color:#fff;z-index:2}.s{position:absolute;top:55px;width:100%;text-align:center;font-size:12.5px;color:rgba(255,255,255,.8);z-index:2}.ph-wrap{position:absolute;left:50%;top:86px;transform:translateX(-50%) rotate(-6deg) scale(.43);transform-origin:top center;z-index:1}",
+   "html": "<div class='t'>how we found this list</div><div class='s'>typed \u201ccozy autumn night\u201d into Cinema</div>{PHONE}"
+  }
+ ]
+}
