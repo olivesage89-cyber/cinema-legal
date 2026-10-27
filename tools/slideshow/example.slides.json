@@ -1,0 +1,76 @@
+[
+ {
+  "file": "01_cover.jpg",
+  "type": "cover",
+  "img": "cover.jpg",
+  "x": 40,
+  "ty": 30,
+  "kick": "A WATCHLIST FOR",
+  "h": "Sweater",
+  "h2": "WEATHER",
+  "sub": "five films that feel like autumn"
+ },
+ {
+  "file": "02_when_harry_met_sally.jpg",
+  "img": "harry.jpg",
+  "x": 50,
+  "ty": 24,
+  "fs": 128,
+  "t": "When Harry<br>Met Sally",
+  "yr": "1989",
+  "dir": "Rob Reiner",
+  "ov": "twelve years, one friendship,<br>and a lot of falling leaves"
+ },
+ {
+  "file": "03_dead_poets_society.jpg",
+  "img": "poets.jpg",
+  "x": 45,
+  "ty": 26,
+  "fs": 132,
+  "t": "Dead Poets<br>Society",
+  "yr": "1989",
+  "dir": "Peter Weir",
+  "ov": "carpe diem, under a pink october sky"
+ },
+ {
+  "file": "04_good_will_hunting.jpg",
+  "img": "hunting.jpg",
+  "x": 50,
+  "ty": 19,
+  "fs": 118,
+  "t": "Good Will<br>Hunting",
+  "yr": "1997",
+  "dir": "Gus Van Sant",
+  "ov": "a park bench, a therapist,<br>and the talk that changes everything"
+ },
+ {
+  "file": "05_rushmore.jpg",
+  "img": "rushmore.jpg",
+  "x": 56,
+  "ty": 80,
+  "fs": 170,
+  "t": "Rushmore",
+  "yr": "1998",
+  "dir": "Wes Anderson",
+  "ov": "blazers, big dreams<br>and a very ambitious fifteen-year-old"
+ },
+ {
+  "file": "06_practical_magic.jpg",
+  "img": "magic.jpg",
+  "x": 45,
+  "ty": 66,
+  "fs": 140,
+  "t": "Practical<br>Magic",
+  "yr": "1998",
+  "dir": "Griffin Dunne",
+  "ov": "two witch sisters, one seaside house,<br>and midnight margaritas"
+ },
+ {
+  "file": "07_cinema.jpg",
+  "type": "end",
+  "img": "end.jpg",
+  "x": 50,
+  "ty": 40,
+  "p": "type a feeling like \u201ccozy autumn night\u201d<br>and find the film that fits"
+ }
+]
