@@ -1,0 +1,130 @@
+{
+ "title_kick": "A WATCHLIST FOR",
+ "title": "Sweater Weather",
+ "title_sub": "five films that feel like autumn",
+ "title_clip": {
+  "src": "hunting.mp4",
+  "ss": 28.53,
+  "d": 3.4,
+  "x": 55
+ },
+ "films": [
+  {
+   "t": "When Harry Met Sally",
+   "yr": "1989",
+   "dir": "Rob Reiner",
+   "imgs": [
+    {
+     "src": "harry.mp4",
+     "ss": 37.05,
+     "d": 2.68
+    },
+    {
+     "src": "harry.mp4",
+     "ss": 39.89,
+     "d": 10.38
+    },
+    {
+     "src": "harry.mp4",
+     "ss": 79.66,
+     "d": 9.62
+    }
+   ]
+  },
+  {
+   "t": "Dead Poets Society",
+   "yr": "1989",
+   "dir": "Peter Weir",
+   "imgs": [
+    {
+     "src": "poets.mp4",
+     "ss": 17.54,
+     "d": 1.22
+    },
+    {
+     "src": "poets.mp4",
+     "ss": 70.0,
+     "d": 3.72
+    },
+    {
+     "src": "poets.mp4",
+     "ss": 102.33,
+     "d": 1.88
+    }
+   ]
+  },
+  {
+   "t": "Good Will Hunting",
+   "yr": "1997",
+   "dir": "Gus Van Sant",
+   "imgs": [
+    {
+     "src": "hunting.mp4",
+     "ss": 6.09,
+     "d": 2.01
+    },
+    {
+     "src": "hunting.mp4",
+     "ss": 63.69,
+     "d": 3.18
+    },
+    {
+     "src": "hunting.mp4",
+     "ss": 101.77,
+     "d": 1.84
+    }
+   ]
+  },
+  {
+   "t": "Rushmore",
+   "yr": "1998",
+   "dir": "Wes Anderson",
+   "imgs": [
+    {
+     "src": "rushmore.mp4",
+     "ss": 21.43,
+     "d": 7.68
+    },
+    {
+     "src": "rushmore.mp4",
+     "ss": 92.44,
+     "d": 3.58
+    },
+    {
+     "src": "rushmore.mp4",
+     "ss": 118.77,
+     "d": 5.51
+    }
+   ]
+  },
+  {
+   "t": "Practical Magic",
+   "yr": "1998",
+   "dir": "Griffin Dunne",
+   "imgs": [
+    {
+     "src": "magic.mp4",
+     "ss": 66.78,
+     "d": 1.78
+    },
+    {
+     "src": "magic.mp4",
+     "ss": 44.86,
+     "d": 1.24
+    },
+    {
+     "src": "magic.mp4",
+     "ss": 75.86,
+     "d": 1.51
+    }
+   ]
+  }
+ ],
+ "end_line": "type a feeling. find the film.",
+ "end_clip": {
+  "src": "hunting.mp4",
+  "x": 40,
+  "ss": 6.09,
+  "d": 2.01
+ }
+}

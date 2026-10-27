@@ -68,3 +68,19 @@ Playwright + Pillow are preinstalled. TMDB key is inside stills.py.
 5. node render_<slug>.js ~/work/<slug>  (your per-slideshow design)   → out/01..07 jpg (1080x1350)
 6. Make a contact sheet of out/ and LOOK at it like an art director: is every slide beautiful? text in empty
    space, readable, nothing clipped at the top, no face covered, colours pleasing. Fix and re-render until yes.
+
+## Weekly VIDEOS (1080x1920, ~24s) — tools: stillvid.py + trailers.py
+Two kinds, one each per week:
+A) MOVING-STILLS video: TMDB stills (stills.py) → 3 stills per film stacked on black with slow drift, staggered reveal.
+B) REAL-CLIPS video: official trailers → shots → 3 shots per film stacked (same builder).
+   python3 trailers.py ~/work/<slug> a=movie:639 ...   (downloads the official YouTube trailer through the user's Railway
+   downloader /fetch endpoint in 1080p, splits it into shots, writes shots_<slug>.json + shotsheet_<slug>.jpg).
+   LOOK at every shotsheet and pick shots: no on-screen text/title cards/credits/logos, no sex/nudity/violence,
+   no near-black frames, faces and moments that sell the mood. Prefer shots ≥1.5s.
+Build: write ~/work/<slug>/video.json (see example.video.json): title_kick/title/title_sub + title_img (still) or
+title_clip {src,ss,d,x}; films [{t,yr,dir,imgs:[3 items]}] where an item is a still filename or a clip {src,ss,d,x};
+end_line + end_img or end_clip. Then: python3 stillvid.py ~/work/<slug>  → video.mp4.
+CHECK: extract frames at several timestamps and look — panels filled (no black bars), right film in each segment,
+nothing awkward. Vary the look week to week like the slideshows (ink colour, fonts in stillvid.py overlay_html,
+panel count/layout, single full-bleed clips with title+year like the A24-list reference) — the stacked layout is one option.
+Needs fonts: npm i @fontsource/pinyon-script @fontsource/cormorant-garamond (node_modules next to stillvid.py).
