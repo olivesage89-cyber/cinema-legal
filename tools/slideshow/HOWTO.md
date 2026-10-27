@@ -26,6 +26,19 @@ Butter yellow is just ONE option. Rules:
   from that film's frame, like the Blackbars/Babygirl-green, Challengers-red examples.
 - Videos too: set "ink" in video.json per post (and vary the overlay fonts).
 
+## FONT LIBRARY (rotate — never the same headline font as the previous 2 posts)
+All exist on npm as @fontsource/<name>. See type_examples.js for 8 worked cover treatments (script+serif caps,
+tall condensed, retro script, red serif caps with script overlay, heavy rounded script, handwritten, condensed caps
+with brush overlay, staggered italic serif) — study them, then make new ones.
+- Formal script: pinyon-script, great-vibes, allura, parisienne, italianno
+- Brush / retro script: yellowtail ("Lady Bird"), kaushan-script, mrs-saint-delafield, lobster, leckerli-one (heavy "Ghibli")
+- Elegant serif: dm-serif-display, bodoni-moda (great italic), playfair-display, cormorant-garamond, prata, gloock, abril-fatface, cinzel (caps)
+- Condensed / bold: six-caps (tall "PLOT-TWIST"), league-gothic, bebas-neue, anton, oswald, archivo-black
+- Handwritten: caveat ("Country Roads"), homemade-apple, reenie-beanie, shadows-into-light
+- Clean sans for small kicker lines: inter, montserrat
+Most covers pair 2 fonts: a hero word/phrase in one family + a small kicker/subtitle in a contrasting one.
+Record "font: yellowtail + inter" in used.txt.
+
 ## Cover vs inside slides
 The COVER is the hook — make it a stunning film-poster image (one gorgeous still, beautiful type, grade, grain).
 The INSIDE slides do NOT have to match the cover's style. Pick one inside layout per slideshow from the library
