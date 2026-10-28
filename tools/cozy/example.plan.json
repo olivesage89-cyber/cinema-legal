@@ -1,0 +1,141 @@
+{
+ "caption": "a cozy fall movie night",
+ "style": "cozy autumn night aesthetic, warm amber candlelight, dark moody golden tones, cream and rust colors, small pumpkins and dried flowers decor, shallow depth of field, soft film grain, shot on iPhone, vertical, no text, no faces",
+ "shots": [
+  {
+   "key": "window",
+   "prompt": "view through a bedroom window at dusk, rain drops on the glass, orange autumn maple tree outside, a small lit candle on the windowsill"
+  },
+  {
+   "key": "pjs",
+   "prompt": "top-down flat lay of a folded cream pajama set with tiny pumpkin print on a white duvet, a woman's two hands with dark red nails smoothing the fabric, no legs, no feet, cable knit sweater sleeves",
+   "motion": "her hands quickly smooth and straighten the folded pajamas"
+  },
+  {
+   "key": "candle",
+   "prompt": "close-up of a woman's hand with dark red nails lighting a candle in a glass jar with a long match",
+   "motion": "the match touches the wick and the flame catches and glows"
+  },
+  {
+   "key": "pour",
+   "prompt": "close-up of hot cocoa being poured from a small pot into a cream ceramic mug on a marble counter, woman's hand in knit sleeve",
+   "motion": "hot cocoa pours from the pot and fills the mug, steam rises"
+  },
+  {
+   "key": "phone",
+   "prompt": "side view close-up of a woman's hands with dark red nails holding an iPhone at chest level, we see the back and side of the phone only, screen faces away from camera, chunky knit blanket, candlelight and fairy lights behind",
+   "motion": "she types on the phone with her thumbs, the screen stays facing away from camera, subtle motion"
+  },
+  {
+   "key": "laptop",
+   "prompt": "open silver laptop on a wooden bed tray on a cozy bed, wide shot from slightly behind and above, the laptop screen is solid flat bright chroma key green with nothing on it, a mug of cocoa, a bowl of popcorn and a candle on the tray, chunky knit blanket, fairy lights, nobody touching the laptop, static camera",
+   "motion": "completely static locked-off camera, the laptop screen stays solid flat green, candle flame flickers, steam rises from the cocoa, nothing else moves",
+   "crop": "918:1632:81:200"
+  }
+ ],
+ "laptop": {
+  "key": "laptop",
+  "crop": "918:1632:81:200"
+ },
+ "holo": {
+  "key": "phone",
+  "k": 0.6,
+  "x0": 40,
+  "y0": 170,
+  "pcx": 530,
+  "pcy": 1250,
+  "dur": 4.2
+ },
+ "movie": {
+  "title": "When Harry Met Sally...",
+  "clips": [
+   {
+    "src": "trailer_harry.mp4",
+    "ss": 37.05,
+    "d": 2.6
+   },
+   {
+    "src": "trailer_harry.mp4",
+    "ss": 39.89,
+    "d": 2.4
+   }
+  ]
+ },
+ "cuts": [
+  [
+   "candle",
+   1.0,
+   0.2
+  ],
+  [
+   "pour",
+   2.5,
+   0.2
+  ],
+  [
+   "lap",
+   3.6,
+   0.2
+  ],
+  [
+   "pjs",
+   2.0,
+   0.2
+  ],
+  [
+   "window",
+   0,
+   0.2
+  ],
+  [
+   "window",
+   0,
+   0.8
+  ],
+  [
+   "pjs",
+   0.3,
+   0.6
+  ],
+  [
+   "pjs",
+   3.2,
+   0.6
+  ],
+  [
+   "candle",
+   0.2,
+   0.5
+  ],
+  [
+   "candle",
+   3.6,
+   0.7
+  ],
+  [
+   "pour",
+   0.6,
+   0.6
+  ],
+  [
+   "pour",
+   3.4,
+   0.7
+  ],
+  [
+   "phone",
+   0,
+   4.2
+  ],
+  [
+   "lap",
+   0,
+   1.6
+  ],
+  [
+   "lap",
+   3.0,
+   2.0
+  ]
+ ]
+}

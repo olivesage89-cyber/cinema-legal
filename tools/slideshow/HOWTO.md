@@ -114,6 +114,13 @@ panel count/layout, single full-bleed clips with title+year like the A24-list re
 Needs fonts: npm i @fontsource/pinyon-script @fontsource/cormorant-garamond (node_modules next to stillvid.py).
 
 
+## PACING — EVERY video (user rule, 2026-10-28: "every video has to be like that")
+- Open with a BURST: 5–8 flash cuts of ~0.2s each previewing the best shots/clips of the video.
+- After that, no shot longer than ~1s (except the app moment / end card): quick cuts, 2–3 short pieces per film
+  (jump cuts through its stills/clips), never one image or clip sitting for several seconds.
+- Reference: slides/cozy-test-v3/video.mp4 (cozy account format: tools/cozy/README.md). Adapt stillvid.py (or cut
+  the timeline yourself with ffmpeg) to follow this pacing.
+
 ## APP SCREEN (approved — use exactly this look, every post)
 appshot.js recreates Cinema's real native search-results screen (from Native/SearchView.swift) inside an iPhone frame.
 The user approved it as "perfect, always like this". Rules:
