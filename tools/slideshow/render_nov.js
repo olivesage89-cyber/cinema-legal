@@ -19,9 +19,9 @@ body{width:1080px;height:1350px;overflow:hidden;position:relative}
 .matte{position:absolute;inset:0;background:rgba(240,215,180,.08);mix-blend-mode:screen}
 .vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(40,10,0,.32) 100%)}
 .ctxt{position:absolute;left:0;right:0;text-align:center;color:var(--ink)}
-.kick{font-family:Mont;font-weight:600;font-size:24px;letter-spacing:.55em;padding-left:.55em}
-.hero{font-family:Play;font-style:italic;font-weight:900;font-size:212px;line-height:.92;letter-spacing:-.02em;margin-top:18px}
-.csub{font-family:Corm;font-style:italic;font-weight:600;font-size:44px;margin-top:22px}
+.kick{text-shadow:0 1px 10px rgba(70,20,0,.4);font-family:Mont;font-weight:600;font-size:24px;letter-spacing:.55em;padding-left:.55em}
+.hero{text-shadow:0 2px 30px rgba(70,20,0,.35);font-family:Play;font-style:italic;font-weight:900;font-size:212px;line-height:.92;letter-spacing:-.02em;margin-top:18px}
+.csub{text-shadow:0 1px 14px rgba(70,20,0,.4);font-family:Corm;font-style:italic;font-weight:600;font-size:44px;margin-top:22px}
 .rule{width:90px;height:2px;background:var(--ink);margin:30px auto 0;opacity:.8}
 .cfoot{position:absolute;bottom:56px;left:0;right:0;text-align:center;color:#FBE9D6;font-family:Mont;font-weight:500;font-size:20px;letter-spacing:.45em;text-shadow:0 1px 12px rgba(60,20,0,.6)}
 /* duotone */
