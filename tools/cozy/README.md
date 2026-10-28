@@ -35,3 +35,14 @@ pip install --break-system-packages higgsfield-client httpx scipy; engine fonts:
    on the EMPTY side of the phone (k≈0.6), so it floats beside the phone, not over her hands. cozyvid.py holo W → LOOK holochk.jpg.
 7. ... cozyvid.py cut W → LOOK at cutsheet.jpg and frames; fix and re-cut until it feels like the reference.
 Cost ≈ $2–3 per video (Kling 2.5 turbo 5s clips + Soul stills).
+
+# Cozy SLIDESHOWS (approved 2026-10-28; reference slides/cozy-slides-sample/ 01…07)
+"A night in" told through the screens in a faceless cozy room — NOT a plain film list.
+1. Cover: AI cozy scene (bed by a rainy window, cocoa, candles, closed laptop…) + small white caption ("my rainy sunday movie night").
+2. Slides 2–6: one movie each, PLAYING on a screen in a cozy scene (laptop on a bed tray, wall TV, laptop by fuzzy socks,
+   tablet on a stand, projector on the wall…), caption = a time stamp + a short line in her voice
+   ("9pm: paddington 2 because i deserve joy"). Vary the device and room every slide; same cozy world/palette within a post.
+3. Slide 7: Cinema app (appshot.js) on the blurred cover; query = the night's mood; Top Results = the 5 movies. No text.
+SCREEN RULE (user, twice): the WHOLE screen must be visible — NOTHING in front of or overlapping it. screen_slides.py
+gen reports a fill score; use only fill >= 0.99 and LOOK. Prefer landscape screens so the movie isn't cropped. Remove green
+spill (place does it) and check no green tint is left on blankets. Movie stills: beautiful, recognisable, no text (stills.py).
