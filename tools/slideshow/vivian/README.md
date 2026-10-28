@@ -29,3 +29,21 @@ Matches her quote videos so the account feels like one girl:
    Topics: heartbreak, situationships, healing, missing someone, self-worth, falling in love, loneliness, growing up.
 3. Slide 7 = Cinema app (appshot.js) on a heavily blurred, darkened second close-up of her; query = the hook's feeling. NO text.
 Render: node render_viv.js DIR (DIR/viv.json like example.viv.json; per-slide "c" overrides the colour).
+
+## SLIDESHOW ROTATION — Gen Z mix (user, 2026-10-28): Vivian must NOT look like a movie account.
+"mix in gen Z mindset… text between people, point at a poster… just gen z things". Rotate formats; never the same
+format twice in a row (check slides/used.txt). Every post still ends with the Cinema app slide (no text).
+A. POINTING AT A POSTER (approved "good"; ref slides/vivian-genz-pointing/): cover + 4 slides, each a DIFFERENT relaxed
+   photo of her (sitting on bed, couch, floor, lying on stomach… never stiff standing) pointing up at ONE poster sticker
+   (white border, slight tilt) placed exactly where her finger points; one Gen Z caption per slide in white
+   ("for when you miss someone you can't text"). Photos: generate pointing poses with lots of empty space above her
+   (Soul + her character, strength 1, batch 4, pick matching faces; reject images with white padding/seams).
+   Render: node render_point.js DIR (point.json).
+B. TEXT CONVERSATION (ref slides/vivian-genz-texts/): B&W moody close-up cover ("texting my bestie the night after the
+   breakup") + 2–3 iMessage dark-mode chat slides with her bestie / situationship / mom / sister — funny, real, Gen Z
+   spelling (lowercase, "rn", "lmaooo", emojis), and Cinema comes up naturally ("i literally just typed that into cinema").
+   Render: node render_texts.js DIR (texts.json).
+C. MOODY FILM LIST (approved "amazing"; ref slides/vivian-healing-sample/) — see the section above.
+D. Other Gen Z formats you can invent at the same quality: photo dump ("things that got me through october"), "pov"
+   slides, "red flags vs green flags in the movies he picks", a notes-app screenshot list, "rating my exes by their
+   comfort movie". Always her voice, always the same girl, Cinema only as a natural part of it.
