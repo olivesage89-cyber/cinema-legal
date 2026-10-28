@@ -41,7 +41,11 @@ A. POINTING AT A POSTER (approved "good"; ref slides/vivian-genz-pointing/): cov
    Render: node render_point.js DIR (point.json).
 B. TEXT CONVERSATION (ref slides/vivian-genz-texts/): B&W moody close-up cover ("texting my bestie the night after the
    breakup") + 2–3 iMessage dark-mode chat slides with her bestie / situationship / mom / sister — funny, real, Gen Z
-   spelling (lowercase, "rn", "lmaooo", emojis), and Cinema comes up naturally ("i literally just typed that into cinema").
+   spelling (lowercase, "rn", emojis). The chat must sound EXACTLY like real friends texting — plain, normal
+   lines ("wanna do a movie night?", "u pick"). NEVER name the app, never write a line just to set up the app
+   (user: "sounds like you promoting it", "no one says that"). The ONLY app moment is a screenshot of Cinema's results
+   she sends as a photo in the chat (cropped top of screen.png, ~320px wide). No separate app slide for this format.
+   Keep every bubble inside the slide (nothing cut off at the bottom).
    Render: node render_texts.js DIR (texts.json).
 C. MOODY FILM LIST (approved "amazing"; ref slides/vivian-healing-sample/) — see the section above.
 D. Other Gen Z formats you can invent at the same quality: photo dump ("things that got me through october"), "pov"
