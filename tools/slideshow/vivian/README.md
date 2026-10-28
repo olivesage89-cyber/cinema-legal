@@ -19,3 +19,13 @@ Key: NEVER in the repo. It lives on the Mac at /Users/sage/Cinema 2/Slideshows/_
   (freckles, brown hair, same features). If none match, regenerate. Then crop tight (quotevid.py tight).
 - Silent: the user adds a sad/trending sound by hand. Cinema is promoted via her bio link, not in these videos.
 - Build: quotevid.py cand → tight → vid → text (see the docstring).
+
+## SLIDESHOWS — healing/heartbreak film lists (approved 2026-10-28 "amazing"; reference slides/vivian-healing-sample/)
+Matches her quote videos so the account feels like one girl:
+1. Slide 1 = a NEW tight, moody close-up of Vivian (make it like the videos: quotevid.py cand → pick the matching face → tight)
+   + her hook in soft yellow (#F6E58D), e.g. "movies i watched while getting over someone who never really chose me".
+2. Slides 2–6 = 5 well-loved films/shows that fit the feeling (stills.py; beautiful, emotional frames; no promo art/text),
+   "title (year)" kicker + her one-line take, all in the same soft yellow, text in empty space (never over eyes/faces).
+   Topics: heartbreak, situationships, healing, missing someone, self-worth, falling in love, loneliness, growing up.
+3. Slide 7 = Cinema app (appshot.js) on a heavily blurred, darkened second close-up of her; query = the hook's feeling. NO text.
+Render: node render_viv.js DIR (DIR/viv.json like example.viv.json; per-slide "c" overrides the colour).
