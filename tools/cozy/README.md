@@ -13,7 +13,9 @@ A faceless girl's cozy night-in routine that ends with Cinema picking the movie.
    the foot of the bed / across the room. She lies back on pillows or sits against the headboard holding the phone up
    in front of her face in both hands — the FLAT BACK of the phone (camera lenses) faces the camera and hides her face.
    NEVER a side/edge-on phone, never a POV of her own hands with the phone turned sideways, never holding the phone
-   out toward the camera like she's showing it. Approved test: slides/cozy-phone-angle/ (lying0/lying3).
+   out toward the camera like she's showing it. NO LOGO (user): the phone is in a plain matte case (no Apple logo,
+   nothing glowing on the back) — reject any frame where a logo shows. Her face stays fully hidden behind the phone.
+   Approved test: slides/cozy-phone-angle/nologo.mp4 (angle refs: lying0/lying3, but those show the logo).
 4. MOVIE: laptop on a bed tray with treats in front, nobody touching it, playing the Top Result's trailer shots. 2 cuts, ~3.5s.
 5. A small white caption centred near the top the whole time ("a cozy fall movie night", "pov: first snow night in"…).
 Total 16–20s. Silent (the user adds a trending sound by hand).
