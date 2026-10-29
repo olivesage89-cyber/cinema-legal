@@ -1,0 +1,266 @@
+[
+ {
+  "file": "tracks/bittersweet.m4a",
+  "title": "Bittersweet",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "sad",
+   "emotional"
+  ]
+ },
+ {
+  "file": "tracks/immersed.m4a",
+  "title": "Immersed",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "sad",
+   "dreamy"
+  ]
+ },
+ {
+  "file": "tracks/dreams-become-real.m4a",
+  "title": "Dreams Become Real",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "sad",
+   "dreamy"
+  ]
+ },
+ {
+  "file": "tracks/reawakening.m4a",
+  "title": "Reawakening",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "sad",
+   "tender"
+  ]
+ },
+ {
+  "file": "tracks/water-lily.m4a",
+  "title": "Water Lily",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "sad",
+   "tender"
+  ]
+ },
+ {
+  "file": "tracks/disquiet.m4a",
+  "title": "Disquiet",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "sad"
+  ]
+ },
+ {
+  "file": "tracks/past-sadness.m4a",
+  "title": "Past Sadness",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "sad",
+   "lofi"
+  ]
+ },
+ {
+  "file": "tracks/fresh-air.m4a",
+  "title": "Fresh Air",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "tender",
+   "cozy"
+  ]
+ },
+ {
+  "file": "tracks/dreamer.m4a",
+  "title": "Dreamer",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "cozy",
+   "dreamy"
+  ]
+ },
+ {
+  "file": "tracks/late-night-radio.m4a",
+  "title": "Late Night Radio",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "cozy",
+   "lofi",
+   "night"
+  ]
+ },
+ {
+  "file": "tracks/study-and-relax.m4a",
+  "title": "Study And Relax",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "cozy",
+   "lofi"
+  ]
+ },
+ {
+  "file": "tracks/almost-bliss.m4a",
+  "title": "Almost Bliss",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "cozy",
+   "warm"
+  ]
+ },
+ {
+  "file": "tracks/mana-two-part-1.m4a",
+  "title": "Mana Two - Part 1",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "cozy",
+   "dreamy"
+  ]
+ },
+ {
+  "file": "tracks/sincerely.m4a",
+  "title": "Sincerely",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "lofi",
+   "nostalgic"
+  ]
+ },
+ {
+  "file": "tracks/crinoline-dreams.m4a",
+  "title": "Crinoline Dreams",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "cozy",
+   "winter"
+  ]
+ },
+ {
+  "file": "tracks/evening.m4a",
+  "title": "Evening",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "cozy",
+   "warm"
+  ]
+ },
+ {
+  "file": "tracks/infinite-perspective.m4a",
+  "title": "Infinite Perspective",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "cinematic",
+   "wonder"
+  ]
+ },
+ {
+  "file": "tracks/floating-cities.m4a",
+  "title": "Floating Cities",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "dreamy",
+   "night"
+  ]
+ },
+ {
+  "file": "tracks/almost-new.m4a",
+  "title": "Almost New",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "nostalgic",
+   "dreamy"
+  ]
+ },
+ {
+  "file": "tracks/jellyfish-in-space.m4a",
+  "title": "Jellyfish in Space",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "dreamy",
+   "wonder"
+  ]
+ },
+ {
+  "file": "tracks/pepper-s-theme.m4a",
+  "title": "Pepper's Theme",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "warm",
+   "nostalgic"
+  ]
+ },
+ {
+  "file": "tracks/morning.m4a",
+  "title": "Morning",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "warm",
+   "cozy"
+  ]
+ },
+ {
+  "file": "tracks/what-is-love.m4a",
+  "title": "What Is Love",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "nostalgic",
+   "romance"
+  ]
+ },
+ {
+  "file": "tracks/slow-jam.m4a",
+  "title": "Slow Jam",
+  "artist": "Kevin MacLeod",
+  "license": "CC BY 4.0",
+  "source": "https://incompetech.com",
+  "moods": [
+   "lofi",
+   "night"
+  ]
+ }
+]
