@@ -1,0 +1,183 @@
+{
+ "ink": "#A9C8FF",
+ "seg": 3.6,
+ "burst": [
+  [
+   "af_34.jpg",
+   45
+  ],
+  [
+   "her_22.jpg",
+   58
+  ],
+  [
+   "st_6.jpg",
+   55
+  ],
+  [
+   "pa_4.jpg",
+   50
+  ],
+  [
+   "ff_7.jpg",
+   50
+  ],
+  [
+   "af_13.jpg",
+   75
+  ],
+  [
+   "her_0.jpg",
+   50
+  ]
+ ],
+ "title": {
+  "kick": "movies that make you want to",
+  "hero": "write",
+  "sub": "five films for the blank page",
+  "top": 300,
+  "stills": [
+   [
+    "ff_7.jpg",
+    1.15,
+    50
+   ],
+   [
+    "her_3.jpg",
+    1.1,
+    22
+   ],
+   [
+    "af_24.jpg",
+    1.15,
+    42
+   ]
+  ]
+ },
+ "films": [
+  {
+   "t": "Stranger Than Fiction",
+   "yr": "2006",
+   "where": "Peacock",
+   "note": "for when your life feels narrated",
+   "stills": [
+    [
+     "st_0.jpg",
+     50
+    ],
+    [
+     "st_6.jpg",
+     58
+    ],
+    [
+     "st_4.jpg",
+     55
+    ],
+    [
+     "st_8.jpg",
+     62
+    ]
+   ],
+   "fs": 74
+  },
+  {
+   "t": "Paterson",
+   "yr": "2016",
+   "where": "Prime Video",
+   "note": "poems hiding in an ordinary week",
+   "stills": [
+    [
+     "pa_4.jpg",
+     50
+    ],
+    [
+     "pa_0.jpg",
+     62
+    ],
+    [
+     "pa_19.jpg",
+     50
+    ],
+    [
+     "pa_14.jpg",
+     72
+    ]
+   ]
+  },
+  {
+   "t": "Almost Famous",
+   "yr": "2000",
+   "where": "Paramount+",
+   "note": "be honest. and unmerciful.",
+   "stills": [
+    [
+     "af_34.jpg",
+     44
+    ],
+    [
+     "af_13.jpg",
+     75
+    ],
+    [
+     "af_12.jpg",
+     40
+    ],
+    [
+     "af_24.jpg",
+     42
+    ]
+   ]
+  },
+  {
+   "t": "Finding Forrester",
+   "yr": "2000",
+   "where": "Rent \u00b7 Apple TV",
+   "note": "the first draft is the heart's",
+   "stills": [
+    [
+     "ff_7.jpg",
+     50
+    ],
+    [
+     "ff_3.jpg",
+     55
+    ],
+    [
+     "ff_18.jpg",
+     28
+    ],
+    [
+     "ff_15.jpg",
+     75
+    ]
+   ]
+  },
+  {
+   "t": "Her",
+   "yr": "2013",
+   "where": "Rent \u00b7 Apple TV",
+   "note": "love letters, written for strangers",
+   "stills": [
+    [
+     "her_0.jpg",
+     50
+    ],
+    [
+     "her_22.jpg",
+     57
+    ],
+    [
+     "her_19.jpg",
+     45
+    ],
+    [
+     "her_10.jpg",
+     40
+    ]
+   ]
+  }
+ ],
+ "end_bg": "her_22.jpg",
+ "end_x": 55,
+ "end_dur": 3.2
+}
