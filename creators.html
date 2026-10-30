@@ -12,221 +12,322 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
 <style>
 [hidden]{display:none!important}
-/* Layout: one column, a ticket-stub plan picker, then the application. Built for opening from a bio link on a phone. */
+/* Layout: top bar, hero card over a warm backdrop, three plan cards side by side, "worked out" tables, video styles, apply, FAQ. */
 :root{
   --ink:#0b0b0e; --panel:#151419; --panel2:#1c1b21; --line:rgba(246,244,241,.10);
   --paper:#F6F4F1; --stone:#E4DED2; --muted:#a29d95; --coral:#F95C4B; --coral-ink:#2a0d09; --ok:#5fd39a;
+  --amber:#F5A54A; --blue:#6E8CFF;
   --display:"Bricolage Grotesque", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --body:"DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ink);color:var(--paper);font:16px/1.55 var(--body);
-  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-.wrap{max-width:720px;margin:0 auto;padding-left:max(18px, env(safe-area-inset-left,0px));padding-right:max(18px, env(safe-area-inset-right,0px))}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font:16px/1.55 var(--body);padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+.narrow{max-width:760px}
 a{color:var(--coral)}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.025em}
+[id]{scroll-margin-top:76px}
 
-/* hero */
-.hero{padding-block:56px 34px;display:grid;gap:18px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
-.brand i{width:30px;height:30px;border-radius:9px;background:var(--coral);display:grid;place-items:center;font-style:normal;color:#fff;font-family:var(--display);font-weight:800}
-.hero h1{font-size:clamp(38px,9vw,60px);line-height:1.02;font-weight:800}
-.hero h1 em{font-style:normal;color:var(--coral)}
-.hero p{margin:0;color:var(--stone);font-size:18px;max-width:34em}
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:15px 26px;
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:rgba(11,11,14,.78);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar .wrap{display:flex;align-items:center;gap:22px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--paper);text-decoration:none;font-family:var(--display);font-size:19px;letter-spacing:-.01em}
+.brand i{width:30px;height:30px;border-radius:9px;background:var(--coral);display:grid;place-items:center;font-style:normal;color:#fff;font-weight:800;font-size:16px}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a{color:var(--stone);text-decoration:none;font-size:14.5px}
+.nav a:hover{color:var(--paper)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:11px 20px;
+  background:var(--paper);color:var(--ink);font:700 14.5px var(--body);cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{filter:brightness(.94)}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:15px 28px;
   background:var(--coral);color:#fff;font:700 16px var(--body);cursor:pointer;text-decoration:none;width:max-content;max-width:100%}
-.cta:hover{filter:brightness(1.06)} .cta:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.plan:focus-visible{outline:3px solid var(--paper);outline-offset:3px}
-.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.facts span{font-size:13px;color:var(--stone);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.cta:hover{filter:brightness(1.06)}
+.cta:focus-visible,.btn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.plan:focus-visible{outline:3px solid var(--paper);outline-offset:3px}
 
-section{padding-block:30px}
-section > h2{font-size:28px;margin-bottom:6px}
-section > .sub{color:var(--muted);margin:0 0 18px}
+/* hero: warm movie-night backdrop with fairy lights, card in the middle */
+.hero{position:relative;overflow:hidden;padding:84px 0 92px;
+  background:
+    radial-gradient(60% 70% at 18% 20%, rgba(245,165,74,.55), transparent 70%),
+    radial-gradient(55% 60% at 85% 30%, rgba(249,92,75,.50), transparent 70%),
+    radial-gradient(70% 60% at 50% 110%, rgba(92,38,92,.85), transparent 70%),
+    linear-gradient(180deg,#2a1414 0%,#1a0f17 60%,#0b0b0e 100%)}
+.lights{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,214,150,.95) 0 2px,rgba(255,190,110,.35) 3px,transparent 7px);
+  background-size:68px 54px;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 70%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 70%);opacity:.55}
+.hcard{position:relative;max-width:760px;margin:0 auto;text-align:center;background:rgba(15,13,17,.62);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border:1px solid rgba(246,244,241,.14);border-radius:30px;padding:46px 40px 36px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.pill{display:inline-block;background:var(--coral);color:#fff;font:700 13px var(--body);border-radius:999px;padding:6px 13px}
+.hero h1{font-size:clamp(38px,6.4vw,66px);line-height:1.02;font-weight:800;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero p.lead{margin:18px auto 0;color:var(--stone);font-size:18.5px;max-width:31em}
+.hero .cta{margin-top:26px}
+.small{margin:16px 0 0;color:var(--muted);font-size:14px}
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+.facts span{font-size:13px;color:var(--stone);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.03)}
 
-/* how it works */
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
-.step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
-.step b{display:block;font-family:var(--display);font-size:17px;margin-bottom:4px}
-.step b::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:999px;background:var(--coral);color:#fff;font-size:13px;margin-right:8px;vertical-align:1px}
-.step p{margin:0;color:var(--muted);font-size:14.5px}
+/* section headers */
+section{padding-block:76px 0}
+.head{text-align:center;max-width:720px;margin:0 auto 34px}
+.eyebrow{font-size:13px;font-weight:700;color:var(--coral)}
+.head h2{font-size:clamp(30px,4.6vw,46px);line-height:1.06;margin-top:8px}
+.head p{color:var(--muted);margin:12px 0 0;font-size:17px}
 
-/* plans as ticket stubs */
-.plans{display:grid;gap:14px}
-.plan{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 128px;background:var(--panel);border:1.5px solid var(--line);
-  border-radius:18px;cursor:pointer;text-align:left;color:inherit;font:inherit;padding:0;transition:border-color .2s ease, transform .2s ease}
-.plan:hover{border-color:rgba(249,92,75,.55)}
-.plan[aria-checked="true"]{border-color:var(--coral);background:linear-gradient(180deg,rgba(249,92,75,.10),rgba(249,92,75,.03)),var(--panel)}
-.plan .main{padding:20px 20px 18px;min-width:0}
-.plan .stub{border-left:2px dashed var(--line);padding:20px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2px}
-.plan .stub::before,.plan .stub::after{content:"";position:absolute;right:128px;width:20px;height:20px;border-radius:999px;background:var(--ink);transform:translateX(50%)}
-.plan .stub::before{top:-11px} .plan .stub::after{bottom:-11px}
-.plan .stub .big{font-family:var(--display);font-weight:800;font-size:30px;line-height:1}
-.plan .stub .per{font-size:12px;color:var(--muted)}
-.plan h3{font-size:21px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.tag{font:700 11px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--coral);color:#fff;border-radius:999px;padding:4px 9px}
-.plan .best{color:var(--muted);font-size:14.5px;margin:4px 0 12px}
-.plan ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
-.plan li{display:flex;gap:9px;font-size:15px}
-.plan li::before{content:"";flex:0 0 7px;height:7px;margin-top:9px;border-radius:2px;background:var(--coral)}
-.plan .ex{margin-top:12px;font-size:13.5px;color:var(--stone);background:var(--panel2);border-radius:10px;padding:9px 11px;font-variant-numeric:tabular-nums}
-.plan .pick{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--coral)}
-.plan .pick .dot{width:18px;height:18px;border-radius:999px;border:2px solid var(--coral);display:grid;place-items:center}
-.plan[aria-checked="true"] .pick .dot::after{content:"";width:8px;height:8px;border-radius:999px;background:var(--coral)}
-.plan[aria-checked="true"] .pick .txt::after{content:"ed"}
+/* plan cards */
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.plan{display:flex;flex-direction:column;text-align:left;color:inherit;font:inherit;padding:0;cursor:pointer;background:var(--panel);
+  border:1.5px solid var(--line);border-radius:22px;overflow:hidden;transition:border-color .2s ease, transform .2s ease}
+.plan:hover{border-color:rgba(249,92,75,.55);transform:translateY(-2px)}
+.plan[aria-checked="true"]{border-color:var(--coral);box-shadow:0 0 0 3px rgba(249,92,75,.22)}
+.plan .top{position:relative;padding:22px 20px 24px;text-align:center;background:var(--panel2);border-bottom:2px dashed var(--line)}
+.plan .tag{position:absolute;left:14px;top:14px;font:700 11px var(--body);letter-spacing:.06em;text-transform:uppercase;background:var(--coral);color:#fff;border-radius:999px;padding:4px 9px}
+.plan .big{display:block;font-family:var(--display);font-weight:800;font-size:clamp(54px,6vw,74px);line-height:1;letter-spacing:-.04em;margin-top:18px}
+.plan .per{display:block;margin-top:8px;font-size:14px;color:var(--muted)}
+.plan .bonus{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--coral-ink);background:var(--coral);border-radius:999px;padding:5px 11px}
+.plan .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.plan h3{font-size:23px;display:flex;align-items:center;gap:10px}
+.plan h3 .dot{width:10px;height:10px;border-radius:999px;flex:0 0 10px}
+.k{font-size:13px;font-weight:700;color:var(--muted);margin:0 0 3px}
+.plan .v{margin:0;font-size:15.5px;color:var(--stone)}
+.plan .v b{color:var(--paper)}
+.plan .ex{font-size:14px;color:var(--stone);background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-variant-numeric:tabular-nums}
+.plan .pick{margin-top:auto;padding-top:8px}
+.plan .pick > span{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 20px;background:var(--paper);color:var(--ink);font-weight:700;font-size:15px}
+.plan[aria-checked="true"] .pick > span{background:var(--coral);color:#fff}
+.plan .pick .txt::after{content:"Choose"}
+.plan[aria-checked="true"] .pick .txt::after{content:"Chosen ✓"}
 
-/* rules */
-.rules{display:grid;gap:8px;margin:0;padding:0;list-style:none}
-.rules li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px}
-.rules b{color:var(--paper)}
+/* worked out */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px}
+.card > h3{font-size:19px;margin-bottom:16px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px}
+.steps li::before{counter-increment:s;content:counter(s);width:28px;height:28px;border-radius:999px;background:var(--coral);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
+.steps b{display:block;font-family:var(--display);font-size:17px}
+.steps p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.callout{margin-top:20px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.callout b{display:block;margin-bottom:3px}
+.callout p{margin:0;color:var(--muted);font-size:14.5px}
+.tables{display:grid;gap:18px}
+.tables h3{font-size:17px;margin:0 0 10px 2px}
+table{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;font-variant-numeric:tabular-nums}
+th,td{padding:13px 16px;text-align:right;border-bottom:1px solid var(--line);font-size:15px}
+th{font-size:13px;font-weight:700;color:var(--muted)}
+th:first-child,td:first-child{text-align:left}
+td b{color:var(--paper)}
+tr:last-child td{border-bottom:0}
+caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:13.5px;padding:9px 4px 0}
+
+/* video styles */
+.examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.excard{display:flex;flex-direction:column;gap:8px;min-width:0}
+.phone{margin:0;position:relative;border-radius:28px;padding:8px;background:#000;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:21px;background:#111}
+.exlbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-top:8px}
+.excard h3{font-size:20px}
+.exdesc{margin:0;color:var(--stone);font-size:15px}
+.exnote{margin:22px 0 0;padding:14px 16px;border-radius:14px;background:rgba(249,92,75,.10);border:1px solid rgba(249,92,75,.35);color:var(--paper);font-size:15px}
+.ideas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}
+.idea{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.idea h3{font-size:15.5px;margin-bottom:8px}
+.idea ul{margin:0;padding-left:18px;color:var(--stone);font-size:14.5px;display:grid;gap:4px}
+.idea .q{font-style:italic}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.rules li{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;color:var(--stone)}
+.rules b{display:block;color:var(--paper);font-family:var(--display);font-size:17px;margin-bottom:3px}
 
 /* form */
-form{display:grid;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px}
+form{display:grid;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px}
 .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 label{display:grid;gap:6px;font-size:14px;font-weight:700;color:var(--stone)}
 label small{font-weight:400;color:var(--muted)}
 input,select,textarea{width:100%;font:16px var(--body);color:var(--paper);background:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:12px 13px}
-textarea{min-height:96px;resize:vertical}
 input::placeholder,textarea::placeholder{color:#6f6a62}
-.chosen{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
-.chosen b{color:var(--paper)} .chosen button{background:none;border:0;color:var(--coral);font:700 14px var(--body);cursor:pointer;padding:0}
+.chosen{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14.5px;color:var(--muted);background:var(--panel2);border-radius:12px;padding:11px 14px}
+.chosen b{color:var(--paper)} .chosen button{background:none;border:0;color:var(--coral);font:700 14.5px var(--body);cursor:pointer;padding:0;margin-left:auto}
 .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:var(--stone);font-size:14.5px}
 .check input{width:20px;height:20px;flex:0 0 20px;margin-top:2px;accent-color:var(--coral)}
 .checks{display:grid;gap:10px}
 .err{color:#ff8a7c;font-size:14px;min-height:1em;margin:0}
-.done{text-align:center;padding:30px 18px;background:var(--panel);border:1px solid var(--line);border-radius:20px}
+.done{text-align:center;padding:34px 20px;background:var(--panel);border:1px solid var(--line);border-radius:22px}
 .done h3{font-size:26px;margin-bottom:6px}
 .done p{color:var(--stone);margin:0 auto;max-width:30em}
 .done .tick{width:56px;height:56px;border-radius:999px;background:var(--ok);display:grid;place-items:center;margin:0 auto 14px;color:#0b0b0e;font-size:28px;font-weight:800}
 
 /* faq */
-details{border-bottom:1px solid var(--line);padding:14px 0}
-summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--coral);font-size:20px;line-height:1}
+summary::after{content:"+";color:var(--coral);font-size:22px;line-height:1}
 details[open] summary::after{content:"–"}
 details p{margin:8px 0 0;color:var(--muted)}
+
+/* closing band */
+.closer{margin-top:84px;text-align:center;padding:56px 24px;border-radius:30px;border:1px solid var(--line);
+  background:radial-gradient(60% 90% at 50% 0%, rgba(249,92,75,.30), transparent 70%),var(--panel)}
+.closer h2{font-size:clamp(28px,4.4vw,42px)}
+.closer .cta{margin-top:22px}
 footer{padding-block:34px 44px;color:var(--muted);font-size:13.5px;display:flex;flex-wrap:wrap;gap:8px 18px}
 
-
-/* make-your-video */
-.make{display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px;align-items:start}
-.phone{margin:0;position:relative;border-radius:28px;padding:8px;background:#000;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.5);max-width:240px}
-.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:21px;background:#111}
-.phone figcaption{font-size:12.5px;color:var(--muted);text-align:center;margin-top:8px}
-.beats{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.beat{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
-.beat .t{font-variant-numeric:tabular-nums;font-size:12.5px;font-weight:700;color:var(--coral);padding-top:2px}
-.beat b{display:block;font-family:var(--display);font-size:16.5px;margin-bottom:2px}
-.beat p{margin:0;color:var(--muted);font-size:14.5px}
-.ideas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
-.idea{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
-.idea h3{font-size:15px;margin-bottom:8px}
-.idea ul{margin:0;padding-left:18px;color:var(--stone);font-size:14.5px;display:grid;gap:4px}
-.idea .q{font-style:italic}
-
-.examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.excard{display:flex;flex-direction:column;gap:8px;min-width:0}
-.excard .phone{max-width:none;width:100%}
-.exlbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-top:6px}
-.excard h3{font-size:18px}
-.exdesc{margin:0;color:var(--stone);font-size:15px}
-.excard ol li::marker{color:var(--coral);font-weight:700}
-.exnote{margin:18px 0 0;padding:12px 14px;border-radius:12px;background:rgba(249,92,75,.10);border:1px solid rgba(249,92,75,.35);color:var(--paper);font-size:14.5px}
-@media (max-width:760px){
-  .examples{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin-right:calc(-1 * max(18px, env(safe-area-inset-right,0px)))}
+@media (max-width:900px){
+  .plans{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .split{grid-template-columns:1fr}
+  .ideas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .examples{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
   .excard{scroll-snap-align:start}
 }
-@media (max-width:560px){ .make{grid-template-columns:1fr} .phone{margin:0 auto;max-width:220px} .ideas{grid-template-columns:1fr} }
-@media (max-width:560px){
-  .steps{grid-template-columns:1fr}
-  .row{grid-template-columns:1fr}
-  .plan{grid-template-columns:minmax(0,1fr) 98px}
-  .plan .stub::before,.plan .stub::after{right:98px}
-  .plan .stub .big{font-size:24px}
+@media (max-width:640px){
+  .nav{display:none}
+  .bar .btn{margin-left:auto}
+  .hero{padding:44px 0 56px}
+  .hcard{padding:34px 20px 28px;border-radius:24px}
+  .hero p.lead{font-size:17px}
+  section{padding-block:60px 0}
+  .row,.rules,.ideas{grid-template-columns:1fr}
+  .card,form{padding:20px}
+  th,td{padding:12px 12px;font-size:14.5px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-html{scroll-behavior:smooth}
 </style>
 </head>
 <body>
-<main class="wrap">
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><i>C</i>Cinema</a>
+    <nav class="nav" aria-label="Page">
+      <a href="#plans">Pay plans</a>
+      <a href="#how">How it works</a>
+      <a href="#make">Video styles</a>
+      <a href="#faqT">FAQ</a>
+    </nav>
+    <a class="btn" href="#apply">Apply now</a>
+  </div>
+</header>
 
-  <header class="hero">
-    <div class="brand"><i>C</i>Cinema Creators</div>
-    <h1>Get paid to share your <em>movie nights.</em></h1>
-    <p>Cinema is a free iPhone app: type how you feel, like "cozy rainy night" or "funny but not dumb", and it finds the perfect movie. Make a short video about it on your own account and pick how you get paid.</p>
-    <a class="cta" href="#plans">See the pay plans</a>
-    <div class="facts"><span>No minimum followers</span><span>TikTok · Reels · Shorts</span><span>Paid within 3 days</span></div>
-  </header>
+<main id="top">
 
-  <section aria-labelledby="how">
-    <h2 id="how" style="margin-bottom:18px">How it works</h2>
-    <div class="steps">
-      <div class="step"><b>Apply</b><p>Pick a pay plan below and send your application.</p></div>
-      <div class="step"><b>Get the brief</b><p>We send video ideas and hooks within 2 days. Say it in your own words.</p></div>
-      <div class="step"><b>Post and get paid</b><p>Post on your account. Send your stats after 7 days and we pay you.</p></div>
+  <div class="hero">
+    <div class="lights" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hcard">
+        <span class="pill">Cinema Creators</span>
+        <h1>Get paid to share your <em>movie nights.</em></h1>
+        <p class="lead">Cinema is an iPhone app: type how you feel, like "cozy rainy night" or "funny but not dumb", and it finds the perfect movie. Make a short video about it on your own account and pick how you get paid.</p>
+        <a class="cta" href="#plans">See the pay plans</a>
+        <p class="small">Apply in about 2 minutes. We read every application ourselves.</p>
+        <div class="facts"><span>No minimum followers</span><span>TikTok · Reels · Shorts</span><span>Paid within 3 days</span></div>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <div class="wrap">
 
   <section id="plans" aria-labelledby="plansT">
-    <h2 id="plansT">Pick your pay plan</h2>
-    <p class="sub">Tap one to choose it. You can switch plans later.</p>
+    <div class="head">
+      <div class="eyebrow">Three pay plans</div>
+      <h2 id="plansT">Pick the one that fits you.</h2>
+      <p>Every plan pays for the same thing: a short video on your account. Tap one to choose it. You can switch later.</p>
+    </div>
     <div class="plans" role="radiogroup" aria-labelledby="plansT">
 
       <button type="button" class="plan" role="radio" aria-checked="false" data-plan="Base + Milestone" id="plan-base">
-        <div class="main">
-          <h3>Base + Milestone <span class="tag">Most picked</span></h3>
-          <p class="best">Guaranteed money for every video, plus a bigger payout when it takes off.</p>
-          <ul>
-            <li>$20 for every video you post</li>
-            <li>$120 total once a video passes 100,000 views</li>
-            <li>$220 total at 500,000 views</li>
-            <li>$520 total at 1,000,000 views</li>
-          </ul>
-          <div class="ex">50k views = $20<br>200k views = $120<br>1.2M views = $520</div>
-          <span class="pick"><span class="dot"></span><span class="txt">Choose</span></span>
-        </div>
-        <div class="stub"><span class="big">$20</span><span class="per">per video<br>+ milestones</span></div>
+        <span class="top">
+          <span class="tag">Most picked</span>
+          <span class="big">$20</span>
+          <span class="per">for every video you post</span>
+          <span class="bonus">up to $520 at 1M views 🚀</span>
+        </span>
+        <span class="body">
+          <h3><span class="dot" style="background:var(--coral)"></span>Base + Milestone</h3>
+          <span><p class="k">Best for</p><p class="v">New and growing accounts. Guaranteed money, plus a bigger payout if it takes off.</p></span>
+          <span><p class="k">What you earn</p><p class="v"><b>$20 per video.</b> The total goes up to $120 at 100K views, $220 at 500K and $520 at 1M.</p></span>
+          <span><p class="k">Example</p><span class="ex" style="display:block">A video with 200K views = $120 for that video.</span></span>
+          <span class="pick"><span><span class="txt"></span></span></span>
+        </span>
       </button>
 
       <button type="button" class="plan" role="radio" aria-checked="false" data-plan="Base + Views" id="plan-basecpm">
-        <div class="main">
-          <h3>Base + Views</h3>
-          <p class="best">A higher guaranteed base, then pay that grows with every view.</p>
-          <ul>
-            <li>$50 for every video you post</li>
-            <li>+$0.50 for every 1,000 views</li>
-            <li>Up to $1,500 per video</li>
-          </ul>
-          <div class="ex">10k views = $55<br>100k views = $100<br>1M views = $550</div>
-          <span class="pick"><span class="dot"></span><span class="txt">Choose</span></span>
-        </div>
-        <div class="stub"><span class="big">$50</span><span class="per">per video<br>+ views</span></div>
+        <span class="top">
+          <span class="big">$50</span>
+          <span class="per">per video + $0.50 per 1,000 views</span>
+          <span class="bonus">up to $1,500 a video</span>
+        </span>
+        <span class="body">
+          <h3><span class="dot" style="background:var(--amber)"></span>Base + Views</h3>
+          <span><p class="k">Best for</p><p class="v">Accounts that get steady views. A higher base, then pay that grows with every view.</p></span>
+          <span><p class="k">What you earn</p><p class="v"><b>$50 per video</b>, plus $0.50 for every 1,000 views, up to $1,500 a video.</p></span>
+          <span><p class="k">Example</p><span class="ex" style="display:block">A video with 100K views = $50 + $50 = $100.</span></span>
+          <span class="pick"><span><span class="txt"></span></span></span>
+        </span>
       </button>
 
       <button type="button" class="plan" role="radio" aria-checked="false" data-plan="Views only" id="plan-cpm">
-        <div class="main">
-          <h3>Views only</h3>
-          <p class="best">Best if your videos regularly go big. No base, highest pay per view.</p>
-          <ul>
-            <li>$1 for every 1,000 views</li>
-            <li>Up to $1,000 per video</li>
-          </ul>
-          <div class="ex">10k views = $10<br>100k views = $100<br>1M views = $1,000</div>
-          <span class="pick"><span class="dot"></span><span class="txt">Choose</span></span>
-        </div>
-        <div class="stub"><span class="big">$1</span><span class="per">per 1,000<br>views</span></div>
+        <span class="top">
+          <span class="big">$1</span>
+          <span class="per">for every 1,000 views</span>
+          <span class="bonus">up to $1,000 a video</span>
+        </span>
+        <span class="body">
+          <h3><span class="dot" style="background:var(--blue)"></span>Views only</h3>
+          <span><p class="k">Best for</p><p class="v">Accounts whose videos often go big. No base, the highest pay per view.</p></span>
+          <span><p class="k">What you earn</p><p class="v"><b>$1 for every 1,000 views</b>, up to $1,000 a video.</p></span>
+          <span><p class="k">Example</p><span class="ex" style="display:block">A video with 250K views = $250.</span></span>
+          <span class="pick"><span><span class="txt"></span></span></span>
+        </span>
       </button>
 
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="howT">
+    <div class="head">
+      <div class="eyebrow">Worked out</div>
+      <h2 id="howT">Simple steps, clear pay.</h2>
+      <p>Views are counted 7 days after you post. Here's exactly what a video earns on each plan.</p>
+    </div>
+    <div class="split">
+      <div class="card">
+        <h3>How it works</h3>
+        <ol class="steps">
+          <li><div><b>Apply</b><p>Pick a pay plan and send your application. About 2 minutes.</p></div></li>
+          <li><div><b>Get your brief</b><p>We email video ideas and hooks within 2 days. Say it in your own words.</p></div></li>
+          <li><div><b>Film and post</b><p>Post on your own TikTok, Reels or Shorts. Show yourself typing a mood into Cinema partway through.</p></div></li>
+          <li><div><b>Send your stats</b><p>After 7 days, send a screenshot of your views.</p></div></li>
+          <li><div><b>Get paid</b><p>We pay within 3 days by PayPal, Venmo, Cash App or Zelle.</p></div></li>
+        </ol>
+        <div class="callout"><b>Milestones don't add up</b><p>On Base + Milestone you get the highest total your video reaches, not every step added together.</p></div>
+      </div>
+      <div class="tables">
+        <div>
+          <h3>Base + Milestone</h3>
+          <table><thead><tr><th>Views on one video</th><th>You earn</th></tr></thead><tbody>
+            <tr><td>Any views</td><td><b>$20</b></td></tr>
+            <tr><td>100K</td><td><b>$120</b></td></tr>
+            <tr><td>500K</td><td><b>$220</b></td></tr>
+            <tr><td>1M</td><td><b>$520</b></td></tr>
+          </tbody></table>
+        </div>
+        <div>
+          <h3>Base + Views and Views only</h3>
+          <table><thead><tr><th>Views on one video</th><th>Base + Views</th><th>Views only</th></tr></thead><tbody>
+            <tr><td>10K</td><td><b>$55</b></td><td><b>$10</b></td></tr>
+            <tr><td>100K</td><td><b>$100</b></td><td><b>$100</b></td></tr>
+            <tr><td>1M</td><td><b>$550</b></td><td><b>$1,000</b></td></tr>
+          </tbody><caption>Base + Views tops out at $1,500 a video, Views only at $1,000.</caption></table>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="make" aria-labelledby="makeT">
-    <h2 id="makeT">Pick your video style</h2>
-    <p class="sub">Three kinds of video you can make. Cozy, quiet and real, filmed vertically on your phone.</p>
+    <div class="head">
+      <div class="eyebrow">Video styles</div>
+      <h2 id="makeT">Cozy, quiet and real.</h2>
+      <p>Three kinds of video you can make, filmed vertically on your phone.</p>
+    </div>
     <div class="examples">
       <article class="excard">
         <figure class="phone"><video src="quiet_movie_night_v5.mp4#t=0.1" autoplay muted loop playsinline preload="auto" aria-label="Example: quiet movie night"></video></figure>
@@ -257,18 +358,27 @@ html{scroll-behavior:smooth}
   </section>
 
   <section aria-labelledby="rulesT">
-    <h2 id="rulesT">The simple rules</h2>
+    <div class="head">
+      <div class="eyebrow">The rules</div>
+      <h2 id="rulesT">Four things to know.</h2>
+    </div>
     <ul class="rules">
-      <li><b>Post on your own account</b>: TikTok, Instagram Reels or YouTube Shorts. Posting the same video on all three counts once.</li>
-      <li><b>Show the app</b>: type a real mood into Cinema and show the movies it finds (see How to make your video).</li>
-      <li><b>Views are counted 7 days after posting.</b> Send a screenshot of your stats and we pay within 3 days. Milestones don't add up: you get the highest one your video reaches.</li>
-      <li><b>We can repost your video</b> on Cinema's accounts and use it in ads, with credit to you.</li>
+      <li><b>Post on your own account</b>TikTok, Instagram Reels or YouTube Shorts. Posting the same video on all three counts once.</li>
+      <li><b>Show the app</b>Type a real mood into Cinema and show the movies it finds.</li>
+      <li><b>Views count after 7 days</b>Send a screenshot of your stats and we pay within 3 days.</li>
+      <li><b>We can repost your video</b>On Cinema's accounts and in ads, with credit to you.</li>
     </ul>
   </section>
 
+  </div>
+  <div class="wrap narrow">
+
   <section id="apply" aria-labelledby="applyT">
-    <h2 id="applyT">Apply</h2>
-    <p class="sub">Takes about 2 minutes. We reply by email within 2 days.</p>
+    <div class="head">
+      <div class="eyebrow">Apply</div>
+      <h2 id="applyT">Takes about 2 minutes.</h2>
+      <p>We reply by email within 2 days.</p>
+    </div>
 
     <form id="appForm" novalidate>
       <div class="chosen" id="chosen">Plan: <b id="chosenName">None yet</b> <button type="button" id="changePlan">Choose a plan</button></div>
@@ -278,7 +388,7 @@ html{scroll-behavior:smooth}
       </div>
       <div class="row">
         <label for="f-handle">Link to your profile<input id="f-handle" name="handle" type="url" inputmode="url" required maxlength="110" placeholder="Paste your profile link" autocomplete="url"></label>
-        <label for="f-phone">Phone number <small>(optional)</small><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="(555) 123-4567"></label>
+        <label for="f-phone"><span>Phone number <small>(optional)</small></span><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="(555) 123-4567"></label>
       </div>
       <div class="row">
         <label for="f-followers">Followers
@@ -314,21 +424,30 @@ html{scroll-behavior:smooth}
       <h3>Application sent</h3>
       <p>Thanks! We'll email you within 2 days with your brief. In the meantime, try the app: <a href="https://apps.apple.com/us/app/cinema-identify-movies/id6800555477" target="_blank" rel="noopener">get Cinema on the App Store</a>.</p>
     </div>
+
   </section>
 
   <section aria-labelledby="faqT">
-    <h2 id="faqT">Questions</h2>
+    <div class="head"><div class="eyebrow">FAQ</div><h2 id="faqT">Questions, answered.</h2></div>
     <details><summary>Do I need a lot of followers?</summary><p>No. Small accounts often get great views on TikTok and Reels. The Base + Milestone plan pays $20 per video no matter your size.</p></details>
     <details><summary>Do I need to pay for the app?</summary><p>No. We'll give you full access for free once you're accepted.</p></details>
     <details><summary>What should the video look like?</summary><p>Cozy and real, like a movie night with friends, a partner or on your own. Show yourself typing a mood into Cinema and the movies it finds. We send hooks and ideas with your brief.</p></details>
+    <details><summary>When do I get paid?</summary><p>Views are counted 7 days after you post. Send us a screenshot of your stats and we pay within 3 days.</p></details>
     <details><summary>Can I switch plans?</summary><p>Yes. Tell us after any video and we'll move you to another plan for the next one.</p></details>
   </section>
 
-  <footer>
-    <span>© 2026 Cinema</span>
-    <a href="https://apps.apple.com/us/app/cinema-identify-movies/id6800555477" target="_blank" rel="noopener">App Store</a>
-    <a href="privacy.html">Privacy</a>
-  </footer>
+  </div>
+  <div class="wrap">
+    <div class="closer">
+      <h2>Get paid to share your movie nights.</h2>
+      <a class="cta" href="#plans">Pick a plan and apply</a>
+    </div>
+    <footer>
+      <span>© 2026 Cinema</span>
+      <a href="https://apps.apple.com/us/app/cinema-identify-movies/id6800555477" target="_blank" rel="noopener">App Store</a>
+      <a href="privacy.html">Privacy</a>
+    </footer>
+  </div>
 </main>
 
 <script>
