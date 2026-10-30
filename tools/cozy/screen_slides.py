@@ -45,9 +45,9 @@ elif cmd=='place':
     A=[];b=[]
     for (x,y),(X,Y) in zip(q,[(0,0),(w,0),(w,h),(0,h)]): A+= [[x,y,1,0,0,0,-X*x,-X*y],[0,0,0,x,y,1,-Y*x,-Y*y]]; b+=[X,Y]
     c=np.linalg.solve(np.array(A,float),np.array(b,float)); warped=m.transform(im.size,Image.PERSPECTIVE,c,Image.BICUBIC)
-    filled=ndimage.binary_fill_holes(g); mask=ndimage.binary_dilation(g&filled,iterations=3)&ndimage.binary_dilation(filled,iterations=3)
-    a=np.array(im).astype(float); R,G,Bc=a[...,0],a[...,1],a[...,2]; sp=(G>R*0.9)&~g
-    a[...,1]=np.where(sp,R*0.82,G); a[...,2]=np.where(sp,np.minimum(Bc,R*0.6),Bc)
+    P=Image.new('L',im.size,0); ImageDraw.Draw(P).polygon(q,fill=1); P=np.array(P).astype(bool)  # only the screen quad (not green-lit keyboard/trackpad)
+    mask=ndimage.binary_dilation(ndimage.binary_fill_holes(g&ndimage.binary_dilation(P,iterations=4)),iterations=3)&ndimage.binary_dilation(P,iterations=5)
+    a=np.array(im).astype(float); R,G,Bc=a[...,0],a[...,1],a[...,2]; sp=~mask; a[...,1]=np.where(sp,np.minimum(G,np.maximum(R,Bc)),G)  # despill: green never above max(R,B) (keeps greys, no dark blotches)
     Image.composite(warped,Image.fromarray(a.clip(0,255).astype('uint8')),Image.fromarray((mask*255).astype('uint8')).filter(ImageFilter.GaussianBlur(1.2))).save(out,quality=95)
 elif cmd=='text':
     src,t,out=sys.argv[3],sys.argv[4],sys.argv[5]; ty=float(sys.argv[6]) if len(sys.argv)>6 else 0.10
