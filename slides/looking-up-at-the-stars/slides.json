@@ -1,0 +1,7 @@
+{"ink":"#FFC9A3","films":[
+ {"slug":"close","t":"Close Encounters<br>of the Third Kind","fs":64,"yr":"1977","dir":"Steven Spielberg","where":"Peacock","line":"for anyone who's ever followed a light in the sky","img":"c1.jpg","x":50,"img2":"c3.jpg"},
+ {"slug":"contact","t":"Contact","yr":"1997","dir":"Robert Zemeckis","where":"Rent · Apple TV","line":"listening to the sky until it answers","img":"k1.jpg","x":30,"img2":"k3.jpg","x2":35},
+ {"slug":"arrival","t":"Arrival","yr":"2016","dir":"Denis Villeneuve","where":"Paramount+","line":"a quiet, aching kind of wonder","img":"a1.jpg","x":20,"img2":"a3.jpg","x2":62},
+ {"slug":"firstman","t":"First Man","yr":"2018","dir":"Damien Chazelle","where":"Rent · Apple TV","line":"the loneliest, loveliest view of the moon","img":"f2.jpg","x":25,"img2":"f3.jpg","x2":25},
+ {"slug":"theory","t":"The Theory<br>of Everything","fs":66,"yr":"2014","dir":"James Marsh","where":"Rent · Apple TV","line":"falling in love under a sky full of stars","img":"t2.jpg","x":60,"img2":"t6.jpg","x2":50}
+]}
