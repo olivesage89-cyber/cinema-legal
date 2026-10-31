@@ -1,0 +1,10 @@
+{"kick":"MOVIES THAT FEEL LIKE","hero1":"the perfect","hero2":"HEIST","sub":"five films where nobody gets hurt","ink":"#E9C46A",
+ "title_img":{"f":"o1.jpg","x":50},
+ "burst":[{"f":"i1.jpg","x":50},{"f":"c1.jpg","x":40},{"f":"s3.jpg","x":60},{"f":"h2.jpg","x":30},{"f":"o4.jpg","x":50},{"f":"i6.jpg","x":40},{"f":"c2.jpg","x":50}],
+ "films":[
+  {"t":"Ocean's Eleven","yr":"2001","where":"HBO Max","take":"three casino vaults","top":[{"f":"o1.jpg"},{"f":"o3.jpg"},{"f":"o4.jpg"}],"bot":[{"f":"o7.jpg"},{"f":"o5.jpg"}]},
+  {"t":"The Sting","yr":"1973","where":"Prime Video","take":"a mobster's bankroll","top":[{"f":"s1.jpg"},{"f":"s3.jpg"},{"f":"s2.jpg"}],"bot":[{"f":"s4.jpg"},{"f":"s6.jpg"},{"f":"s7.jpg"}]},
+  {"t":"Catch Me If You Can","fs":86,"tt":122,"yr":"2002","where":"Paramount+","take":"a fortune in fake checks","top":[{"f":"c1.jpg"},{"f":"c2.jpg"},{"f":"c5.jpg"}],"bot":[{"f":"c4.jpg"},{"f":"c3.jpg"},{"f":"c7.jpg"}]},
+  {"t":"How to Steal a Million","fs":80,"tt":126,"yr":"1966","where":"rent on Apple TV","take":"one priceless venus","top":[{"f":"h2.jpg"},{"f":"h1.jpg"},{"f":"h6.jpg"}],"bot":[{"f":"h3.jpg"},{"f":"h4.jpg"},{"f":"h5.jpg"}]},
+  {"t":"The Italian Job","yr":"1969","where":"MGM+","take":"a truckload of gold","top":[{"f":"i1.jpg"},{"f":"i6.jpg"},{"f":"i7.jpg"}],"bot":[{"f":"i3.jpg"},{"f":"i5.jpg"},{"f":"i2.jpg"}]}],
+ "end_img":{"f":"o2.jpg","x":50},"phone":"app/phone.png"}

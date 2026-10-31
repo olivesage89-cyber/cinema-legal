@@ -1,0 +1,6 @@
+{"films":[
+ {"t":"Ocean's Eleven","yr":"2001","dir":"Steven Soderbergh","crew":"Clooney, Pitt, Roberts","take":"three casino vaults","where":"HBO Max","main":"o1.jpg","inset":"o5.jpg","cap":"tess","line":"eleven smooth talkers, one impossible vault, not a hair out of place"},
+ {"t":"The Sting","yr":"1973","dir":"George Roy Hill","crew":"Newman, Redford","take":"a mobster's bankroll","where":"Prime Video","main":"s2.jpg","inset":"s3.jpg","cap":"chicago, 1936","line":"a long con so beautifully played, you'll fall for it too"},
+ {"t":"Catch Me If You Can","fs":50,"yr":"2002","dir":"Steven Spielberg","crew":"DiCaprio, Hanks","take":"a fortune in fake checks","where":"Paramount+","main":"c1.jpg","mx":45,"inset":"c2.jpg","cap":"pan am, 1964","line":"pilot, doctor, lawyer — none of it real, all of it charming"},
+ {"t":"How to Steal a Million","fs":44,"yr":"1966","dir":"William Wyler","crew":"Hepburn, O'Toole","take":"one priceless venus","where":"rent on Apple TV","main":"h4.jpg","inset":"h2.jpg","ix":30,"cap":"paris","line":"audrey hepburn, a forged masterpiece and one night in a museum"},
+ {"t":"The Italian Job","yr":"1969","dir":"Peter Collinson","crew":"Caine, Coward","take":"a truckload of gold","where":"MGM+","main":"i1.jpg","inset":"i3.jpg","cap":"turin","line":"three mini coopers, one giant traffic jam, a cliffhanger in the alps"}]}
