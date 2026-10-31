@@ -1,0 +1,11 @@
+{"ink":"#FFD45C","flash":0.2,"seg":3.3,
+"burst_bg":"c7.jpg","burst":["c15.jpg","a11.jpg","d5.jpg","r17.jpg","c8.jpg","a21.jpg","w4.jpg"],
+"title":{"kick":"MOVIES THAT FEEL LIKE","hero":"the last week of","hero2":"summer","sub":"five films for when the sun starts leaving","stamp":"'26 8 31","top":220,
+ "shots":[{"img":"a25.jpg","x":50,"dur":1.15},{"img":"c7.jpg","x":50,"dur":1.1},{"img":"c18.jpg","x":66,"dur":1.15}]},
+"films":[
+ {"t":"Call Me by<br>Your Name","fs":104,"yr":"2017","where":"Netflix","line":"italy, 1983 — the summer you never get over","stamp":"'83 8 12","acc":"#9FD3FF","items":["c7.jpg","c13.jpg","c1.jpg"],"bg":"c13.jpg"},
+ {"t":"Aftersun","fs":132,"yr":"2022","where":"rent on Prime Video","line":"a holiday you only understand years later","stamp":"'98 7 21","acc":"#7FE0D2","items":["a11.jpg","a25.jpg","a19.jpg"],"bg":"a1.jpg"},
+ {"t":"The Way<br>Way Back","fs":112,"yr":"2013","where":"Cinemax","line":"the waterpark summer that changed everything","stamp":"'13 8 30","acc":"#FFD45C","items":["w7.jpg","w4.jpg","w9.jpg"],"bg":"w4.jpg"},
+ {"t":"The Talented<br>Mr. Ripley","fs":98,"yr":"1999","where":"Paramount+","line":"la dolce vita, with a dark little secret","stamp":"'58 8 19","acc":"#FFA94D","items":["r17.jpg","r18.jpg","r1.jpg"],"bg":"r17.jpg"},
+ {"t":"Dirty<br>Dancing","fs":124,"yr":"1987","where":"Philo","line":"catskills, 1963 — the last dance of summer","stamp":"'63 8 24","acc":"#FF9EC4","items":["d7.jpg","d16.jpg","d13.jpg"],"bg":"d7.jpg"}],
+"end_bg":"a25.jpg","end_x":50,"phone":"/root/work/summer/app/phone.png","end_dur":3.4}
