@@ -1,0 +1,185 @@
+{
+ "ink": "#FF7A3D",
+ "cut": 0.85,
+ "title_dur": 3.0,
+ "burst_d": 0.2,
+ "burst": [
+  [
+   "r2.jpg",
+   50
+  ],
+  [
+   "f1.jpg",
+   50
+  ],
+  [
+   "w5.jpg",
+   75
+  ],
+  [
+   "d4.jpg",
+   50
+  ],
+  [
+   "h1.jpg",
+   50
+  ],
+  [
+   "f3.jpg",
+   50
+  ],
+  [
+   "d1.jpg",
+   30
+  ]
+ ],
+ "title_bg": [
+  "r5.jpg",
+  58,
+  50
+ ],
+ "films": [
+  {
+   "t": "Rocky",
+   "yr": "1976",
+   "where": "Prime Video",
+   "line": "for the 4 a.m. runs nobody sees",
+   "imgs": [
+    [
+     "r1.jpg",
+     50,
+     50
+    ],
+    [
+     "r3.jpg",
+     45,
+     50
+    ],
+    [
+     "r4.jpg",
+     38,
+     50
+    ],
+    [
+     "r2.jpg",
+     50,
+     50
+    ]
+   ]
+  },
+  {
+   "t": "The Pursuit of Happyness",
+   "yr": "2006",
+   "where": "Angel Studios",
+   "line": "for when you're starting from zero",
+   "imgs": [
+    [
+     "h1.jpg",
+     52,
+     50
+    ],
+    [
+     "h2.jpg",
+     42,
+     50
+    ],
+    [
+     "h4.jpg",
+     45,
+     50
+    ],
+    [
+     "h3.jpg",
+     72,
+     50
+    ]
+   ]
+  },
+  {
+   "t": "Whiplash",
+   "yr": "2014",
+   "where": "Rent on Apple TV",
+   "line": "for when good isn't good enough",
+   "imgs": [
+    [
+     "w1.jpg",
+     26,
+     50
+    ],
+    [
+     "w2.jpg",
+     33,
+     50
+    ],
+    [
+     "w5.jpg",
+     75,
+     50
+    ],
+    [
+     "w4.jpg",
+     50,
+     50
+    ]
+   ]
+  },
+  {
+   "t": "Ford v Ferrari",
+   "yr": "2019",
+   "where": "FX Now",
+   "line": "for when you go like hell anyway",
+   "imgs": [
+    [
+     "f1.jpg",
+     50,
+     50
+    ],
+    [
+     "f2.jpg",
+     46,
+     50
+    ],
+    [
+     "f4.jpg",
+     50,
+     50
+    ],
+    [
+     "f3.jpg",
+     50,
+     50
+    ]
+   ]
+  },
+  {
+   "t": "Hidden Figures",
+   "yr": "2016",
+   "where": "HBO Max",
+   "line": "for proving the whole room wrong",
+   "imgs": [
+    [
+     "d1.jpg",
+     30,
+     50
+    ],
+    [
+     "d2.jpg",
+     45,
+     50
+    ],
+    [
+     "d4.jpg",
+     50,
+     50
+    ],
+    [
+     "d5.jpg",
+     50,
+     50
+    ]
+   ]
+  }
+ ],
+ "end_bg": "f3.jpg",
+ "end_x": 50
+}
