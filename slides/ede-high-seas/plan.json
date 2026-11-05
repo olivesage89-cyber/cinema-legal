@@ -1,0 +1,194 @@
+{
+ "ink": "#F2EEE4",
+ "acc": "#EE5A43",
+ "shade": "7,20,32",
+ "burst": [
+  [
+   "m2.jpg",
+   65
+  ],
+  [
+   "e3.jpg",
+   50
+  ],
+  [
+   "k3.jpg",
+   57
+  ],
+  [
+   "p1.jpg",
+   38
+  ],
+  [
+   "t1.jpg",
+   54
+  ],
+  [
+   "m4.jpg",
+   57
+  ],
+  [
+   "k2.jpg",
+   50
+  ]
+ ],
+ "title": {
+  "kick": "MOVIES THAT FEEL LIKE",
+  "script": "the",
+  "hero": [
+   "HIGH",
+   "SEAS"
+  ],
+  "fs": 240,
+  "sub": "tall ships, storms &amp;<br>no land in sight",
+  "foot": "FIVE VOYAGES",
+  "shots": [
+   [
+    "m5.jpg",
+    57,
+    1.1
+   ],
+   [
+    "t5.jpg",
+    40,
+    1.05
+   ],
+   [
+    "e2.jpg",
+    21,
+    1.2
+   ]
+  ]
+ },
+ "films": [
+  {
+   "t": "Master and<br>Commander",
+   "fs": 96,
+   "yr": "2003",
+   "where": "Apple TV",
+   "place": "CAPE HORN",
+   "line": "a tall ship, a long war<br>&amp; the far side of the world",
+   "cuts": [
+    [
+     "m1.jpg",
+     1.0,
+     57
+    ],
+    [
+     "m3.jpg",
+     1.0,
+     21
+    ],
+    [
+     "m2.jpg",
+     1.1,
+     65
+    ]
+   ]
+  },
+  {
+   "t": "Pirates of<br>the Caribbean",
+   "fs": 92,
+   "yr": "2003",
+   "where": "Disney+",
+   "place": "PORT ROYAL",
+   "line": "black sails, buried gold &amp; a captain<br>who arrives on a sinking boat",
+   "cuts": [
+    [
+     "p1.jpg",
+     1.0,
+     38
+    ],
+    [
+     "p2.jpg",
+     1.0,
+     47
+    ],
+    [
+     "p3.jpg",
+     1.1,
+     60
+    ]
+   ]
+  },
+  {
+   "t": "Kon-Tiki",
+   "fs": 124,
+   "yr": "2012",
+   "where": "Kanopy",
+   "place": "THE PACIFIC",
+   "line": "six men, one balsa raft<br>&amp; 8,000 kilometres of open ocean",
+   "cuts": [
+    [
+     "k1.jpg",
+     1.0,
+     50
+    ],
+    [
+     "k3.jpg",
+     1.0,
+     57
+    ],
+    [
+     "k2.jpg",
+     1.1,
+     50
+    ]
+   ]
+  },
+  {
+   "t": "Treasure<br>Planet",
+   "fs": 108,
+   "yr": "2002",
+   "where": "Disney+",
+   "place": "THE ETHERIUM",
+   "line": "solar sails, a sea of stars<br>&amp; a map to a thousand worlds",
+   "cuts": [
+    [
+     "t1.jpg",
+     1.0,
+     54
+    ],
+    [
+     "t3.jpg",
+     1.0,
+     50
+    ],
+    [
+     "t2.jpg",
+     1.1,
+     70
+    ]
+   ]
+  },
+  {
+   "t": "The Sea Beast",
+   "fs": 104,
+   "yr": "2022",
+   "where": "Netflix",
+   "place": "UNCHARTED WATERS",
+   "line": "red sails, sea monsters &amp; a girl<br>who won't stay ashore",
+   "cuts": [
+    [
+     "e2.jpg",
+     1.0,
+     21
+    ],
+    [
+     "e1.jpg",
+     1.0,
+     50
+    ],
+    [
+     "e3.jpg",
+     1.1,
+     50
+    ]
+   ]
+  }
+ ],
+ "end_bg": "k3.jpg",
+ "end_x": 50,
+ "phone": "phone.png",
+ "end_dur": 3.2
+}
