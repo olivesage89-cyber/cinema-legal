@@ -1,0 +1,210 @@
+{
+ "burst": [
+  [
+   "g3.jpg",
+   50
+  ],
+  [
+   "e1.jpg",
+   30
+  ],
+  [
+   "b2.jpg",
+   50
+  ],
+  [
+   "h1.jpg",
+   50
+  ],
+  [
+   "g2.jpg",
+   45
+  ],
+  [
+   "s1.jpg",
+   60
+  ],
+  [
+   "b4.jpg",
+   45
+  ]
+ ],
+ "title": {
+  "kick": "MOVIES THAT FEEL LIKE AN",
+  "hero": "ANCIENT",
+  "script": "epic",
+  "sub": "marble cities, chariot races<br>&amp; legends written in the stars",
+  "foot": "FIVE LEGENDS",
+  "shots": [
+   [
+    "g1.jpg",
+    68,
+    1.05
+   ],
+   [
+    "e2.jpg",
+    50,
+    1.0
+   ],
+   [
+    "b1.jpg",
+    62,
+    1.05
+   ]
+  ]
+ },
+ "films": [
+  {
+   "t": "Gladiator",
+   "yr": "2000",
+   "where": "Netflix",
+   "place": "ROME \u00b7 180 AD",
+   "line": "a soldier, a field of wheat<br>&amp; a promise to come home",
+   "cuts": [
+    [
+     "g2.jpg",
+     0.95,
+     45
+    ],
+    [
+     "g3.jpg",
+     0.95,
+     50
+    ],
+    [
+     "g4.jpg",
+     1.0,
+     45
+    ]
+   ],
+   "slide": {
+    "main": "g1.jpg",
+    "x": 70,
+    "coin": "g3.jpg"
+   }
+  },
+  {
+   "t": "Ben-Hur",
+   "yr": "1959",
+   "where": "rent on Prime Video",
+   "place": "JUDEA \u00b7 26 AD",
+   "line": "eleven oscars &amp; the greatest<br>chariot race ever filmed",
+   "cuts": [
+    [
+     "b1.jpg",
+     0.95,
+     70
+    ],
+    [
+     "b3.jpg",
+     0.95,
+     62
+    ],
+    [
+     "b4.jpg",
+     1.0,
+     45
+    ]
+   ],
+   "slide": {
+    "main": "b2.jpg",
+    "x": 50,
+    "coin": "b3.jpg",
+    "cx": 60
+   }
+  },
+  {
+   "t": "Spartacus",
+   "yr": "1960",
+   "where": "MGM+",
+   "place": "CAPUA \u00b7 73 BC",
+   "line": "one man said no,<br>and an army stood up",
+   "cuts": [
+    [
+     "s1.jpg",
+     0.95,
+     62
+    ],
+    [
+     "s2.jpg",
+     0.95,
+     50
+    ],
+    [
+     "s3.jpg",
+     1.0,
+     42
+    ]
+   ],
+   "slide": {
+    "main": "s1.jpg",
+    "x": 62,
+    "coin": "s3.jpg",
+    "cx": 35
+   }
+  },
+  {
+   "t": "The Prince of Egypt",
+   "fs": 76,
+   "yr": "1998",
+   "where": "Netflix",
+   "place": "THEBES \u00b7 1300 BC",
+   "line": "two brothers, one river<br>&amp; a sea that opens",
+   "cuts": [
+    [
+     "e1.jpg",
+     0.95,
+     28
+    ],
+    [
+     "e3.jpg",
+     0.95,
+     50
+    ],
+    [
+     "e4.jpg",
+     1.0,
+     50
+    ]
+   ],
+   "slide": {
+    "main": "e1.jpg",
+    "x": 26,
+    "coin": "e2.jpg"
+   }
+  },
+  {
+   "t": "Hercules",
+   "yr": "1997",
+   "where": "Disney+",
+   "place": "MOUNT OLYMPUS",
+   "line": "from zero to hero,<br>all the way up to the gods",
+   "cuts": [
+    [
+     "h1.jpg",
+     0.95,
+     50
+    ],
+    [
+     "h2.jpg",
+     0.95,
+     45
+    ],
+    [
+     "h3.jpg",
+     1.0,
+     50
+    ]
+   ],
+   "slide": {
+    "main": "h1.jpg",
+    "x": 50,
+    "coin": "h2.jpg",
+    "cx": 45
+   }
+  }
+ ],
+ "end_bg": "e2.jpg",
+ "phone": "phone.png",
+ "end_dur": 3.2
+}
