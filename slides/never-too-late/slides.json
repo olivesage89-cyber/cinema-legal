@@ -1,0 +1,94 @@
+{
+ "cover": {
+  "img": "cover.jpg"
+ },
+ "films": [
+  {
+   "slug": "fastest_indian",
+   "t": "The World's Fastest<br>Indian",
+   "yr": "2005",
+   "dir": "Roger Donaldson",
+   "acc": "#A8322B",
+   "hand": "never too late to go fast",
+   "ov": "a kiwi in his sixties, a 1920 motorcycle<br>&amp; the salt flats of utah",
+   "big": "c_big.jpg",
+   "sm": [
+    "c1.jpg",
+    "c2.jpg",
+    "c3.jpg"
+   ],
+   "bx": 50,
+   "by": 50,
+   "fs": 72
+  },
+  {
+   "slug": "the_lunchbox",
+   "t": "The Lunchbox",
+   "yr": "2013",
+   "dir": "Ritesh Batra",
+   "acc": "#A86F0E",
+   "hand": "never too late to fall in love",
+   "ov": "a lunch sent to the wrong desk \u2014<br>and the letters that came back with it",
+   "big": "e_big.jpg",
+   "sm": [
+    "e1.jpg",
+    "e2.jpg",
+    "e4.jpg"
+   ],
+   "bx": 50,
+   "by": 50
+  },
+  {
+   "slug": "florence_foster_jenkins",
+   "t": "Florence Foster<br>Jenkins",
+   "yr": "2016",
+   "dir": "Stephen Frears",
+   "acc": "#9A3A55",
+   "hand": "never too late to take the stage",
+   "ov": "no voice, all heart \u2014<br>and a sold-out night at carnegie hall",
+   "big": "g_big.jpg",
+   "sm": [
+    "g1.jpg",
+    "g2.jpg",
+    "g3.jpg"
+   ],
+   "bx": 50,
+   "by": 50,
+   "fs": 72
+  },
+  {
+   "slug": "the_natural",
+   "t": "The Natural",
+   "yr": "1984",
+   "dir": "Barry Levinson",
+   "acc": "#3F5D2A",
+   "hand": "never too late for a second swing",
+   "ov": "sixteen years gone, one homemade bat<br>&amp; a rookie nobody believed in",
+   "big": "l_big.jpg",
+   "sm": [
+    "l1.jpg",
+    "l2.jpg",
+    "l3.jpg"
+   ],
+   "bx": 50,
+   "by": 50
+  },
+  {
+   "slug": "the_bucket_list",
+   "t": "The Bucket List",
+   "yr": "2007",
+   "dir": "Rob Reiner",
+   "acc": "#2D6488",
+   "hand": "never too late to see the world",
+   "ov": "two strangers, one list<br>&amp; every place they swore they'd go",
+   "big": "d_big.jpg",
+   "sm": [
+    "d1.jpg",
+    "d2.jpg",
+    "d3.jpg"
+   ],
+   "bx": 50,
+   "by": 50
+  }
+ ]
+}
