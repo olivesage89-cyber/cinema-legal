@@ -30,6 +30,12 @@ Matches her quote videos so the account feels like one girl:
 3. Slide 7 = Cinema app (appshot.js) on a heavily blurred, darkened second close-up of her; query = the hook's feeling. NO text.
 Render: node render_viv.js DIR (DIR/viv.json like example.viv.json; per-slide "c" overrides the colour).
 
+## DAILY MIX (user, 2026-11-08) — 3 posts a day
+- 9:08am run → E (relatable)   - 2:08pm run → a film format A/B/C/D (never the same letter as her previous film post)
+- 7:08pm run → E (relatable)
+- Every 4th E post is E-APP: if her last 3 E posts in used.txt are all plain E, this one is E-APP.
+- Cinema otherwise lives in her bio link; the film formats keep their own app slides/captions.
+
 ## SLIDESHOW ROTATION — Gen Z mix (user, 2026-10-28): Vivian must NOT look like a movie account.
 "mix in gen Z mindset… text between people, point at a poster… just gen z things". Rotate formats; never the same
 format twice in a row (check slides/used.txt). Every post still ends with the Cinema app slide (no text).
@@ -48,6 +54,25 @@ B. TEXT CONVERSATION (ref slides/vivian-genz-texts/): B&W moody close-up cover (
    Keep every bubble inside the slide (nothing cut off at the bottom).
    Render: node render_texts.js DIR (texts.json).
 C. MOODY FILM LIST (approved "amazing"; ref slides/vivian-healing-sample/) — see the section above.
+E. RELATABLE (user, 2026-11-08 — now the MAIN format; refs: the "shh" relatable photo carousels, 100K–300K likes).
+   Looks like zero effort — that is the point. Lazy low-angle front-camera selfie: her face only in the bottom third
+   (often cut off at the chin/nose), looking up or off to the side, the top 2/3 empty ceiling/wall/sky, flat dull light,
+   unedited. One small line per slide in TikTok's own text style (TikTok Sans 500, ~40px, dark navy #1B2440, no
+   outline; white only on a dark photo) in the empty space, centred or a little right. All lowercase, lazy punctuation,
+   no emojis on the slide. Photos: python3 relgen.py cand W "<scene>" (or `mirror` for a mirror-selfie reveal slide) →
+   pick a clear ref_face match. Render: node render_rel.js DIR (rel.json; see the header comment).
+   Structures (rotate): 1 slide, one line | 3–6 slides, SAME photo, the text builds and the last slide flips it with a
+   self-roast ("i stopped explaining myself / … / ok i still check his location") | 2 slides: confession + mirror
+   selfie "hi my names vivian and i …".
+   Lines: ORIGINAL confessional + relatable (situationships, overthinking, friendships, self-worth, being a girl) — never
+   copy other creators' lines. Example: "i dont have a type i just have a pattern", "im not mad im just going to remember
+   this forever". Read them out loud: if it sounds like a quote account or an ad, rewrite.
+   NO app, NO movies on plain E posts. Caption = tiny ("hi lol", "anyway", "not me", "be honest") + #fyp #relatable
+   #viral + 1 more. No Cinema line in the caption.
+   E-APP (every 4th E post): a 3–5 slide build that ends with what she does about it tonight → last slide = the
+   Cinema app (appshot.js, phone on her blurred photo, no text), query = the feeling in her words, Top Results = 5
+   fitting films. e.g. "he left me on delivered since tuesday / im not gonna text him / im not gonna text him / im gonna
+   do this instead / [app]". Caption stays tiny; no Cinema line.
 D. Other Gen Z formats you can invent at the same quality: photo dump ("things that got me through october"), "pov"
    slides, "red flags vs green flags in the movies he picks", a notes-app screenshot list, "rating my exes by their
    comfort movie". Always her voice, always the same girl, Cinema only as a natural part of it.
