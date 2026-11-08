@@ -1,0 +1,16 @@
+{"ink":"#8EE3C2","phone":"phone.png","seg":3.6,"flash":0.2,
+"burst":[["qg0.jpg",45],["op7.jpg",50],["im0.jpg",45],["mb19.jpg",40],["gf23.jpg",58],["qg17.jpg",30],["op14.jpg",50]],
+"title":{"kick":"MOVIES ABOUT","script":"brilliant","hero":"MINDS","sub":"chalkboards, chess boards &amp; 3am breakthroughs","tag":"5 FILMS · SHOW YOUR WORK","top":190,
+ "shots":[["op3.jpg",55,0.95],["mb0.jpg",50,0.9],["mb3.jpg",50,0.9]]},
+"films":[
+ {"t":"The Imitation Game","fs":92,"yr":"2014","where":"Lionsgate+","line":"the war was won by the quiet one in the corner",
+  "imgs":[["im6.jpg",50,30],["im9.jpg",50,40],["im18.jpg",50,35],["im1.jpg",60,20],["im13.jpg",50,35],["im14.jpg",50,40]]},
+ {"t":"The Queen's Gambit","fs":92,"yr":"2020","where":"Netflix","line":"sixty-four squares and a mind that never sleeps",
+  "imgs":[["qg4.jpg",50,30],["qg2.jpg",50,45],["qg13.jpg",50,40],["qg27.jpg",50,20],["qg26.jpg",50,45],["qg34.jpg",55,45]]},
+ {"t":"Oppenheimer","fs":112,"yr":"2023","where":"Peacock","line":"one idea big enough to change the world forever",
+  "imgs":[["op0.jpg",50,15],["op15.jpg",50,40],["op9.jpg",50,50],["op6.jpg",50,25],["op16.jpg",50,35],["op10.jpg",50,40]]},
+ {"t":"Moneyball","fs":112,"yr":"2011","where":"Hulu","line":"the numbers saw what everyone else missed",
+  "imgs":[["mb0.jpg",50,50],["mb7.jpg",50,35],["mb3.jpg",50,50],["mb6.jpg",50,35],["mb10.jpg",50,40],["mb23.jpg",50,40]]},
+ {"t":"Gifted","fs":120,"yr":"2017","where":"Peacock","line":"a seven-year-old genius who just wants to be a kid",
+  "imgs":[["gf14.jpg",50,45],["gf1.jpg",50,30],["gf12.jpg",50,50],["gf17.jpg",50,30],["gf3.jpg",50,55],["gf26.jpg",50,55]]}
+]}

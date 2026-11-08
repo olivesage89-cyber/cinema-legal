@@ -1,0 +1,7 @@
+{"ink":"#8EE3C2","phone":"phone.png","films":[
+ {"t":"The Imitation Game","fs":80,"yr":"2014","dir":"Morten Tyldum","where":"Lionsgate+","line":"the war was won by the quiet one in the corner","imgs":[["im6.jpg",50,30],["im9.jpg",50,40],["im18.jpg",50,40]]},
+ {"t":"The Queen's Gambit","fs":80,"yr":"2020","dir":"Scott Frank","where":"Netflix","line":"sixty-four squares and a mind that never sleeps","imgs":[["qg4.jpg",50,40],["qg27.jpg",50,25],["qg26.jpg",50,50]]},
+ {"t":"Oppenheimer","fs":96,"yr":"2023","dir":"Christopher Nolan","where":"Peacock","line":"one idea big enough to change the world forever","imgs":[["op0.jpg",50,20],["op16.jpg",50,35],["op6.jpg",50,30]]},
+ {"t":"Moneyball","fs":96,"yr":"2011","dir":"Bennett Miller","where":"Hulu","line":"the numbers saw what everyone else missed","imgs":[["mb6.jpg",50,35],["mb7.jpg",50,35],["mb10.jpg",50,40]]},
+ {"t":"Gifted","fs":104,"yr":"2017","dir":"Marc Webb","where":"Peacock","line":"a seven-year-old genius who just wants to be a kid","imgs":[["gf14.jpg",50,45],["gf3.jpg",50,55],["gf1.jpg",50,30]]}
+]}
