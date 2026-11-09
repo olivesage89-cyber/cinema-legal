@@ -1,0 +1,278 @@
+{
+ "ink": "#FFC56B",
+ "flash": 0.2,
+ "burst": [
+  [
+   "c0.jpg",
+   50
+  ],
+  [
+   "d17.jpg",
+   45
+  ],
+  [
+   "f0.jpg",
+   50
+  ],
+  [
+   "m12.jpg",
+   60
+  ],
+  [
+   "b43.jpg",
+   35
+  ],
+  [
+   "c46.jpg",
+   40
+  ],
+  [
+   "f3.jpg",
+   55
+  ],
+  [
+   "m9.jpg",
+   50
+  ]
+ ],
+ "title": {
+  "kick": "ANIME ABOUT",
+  "hero": "growing up",
+  "fs": 190,
+  "sub": "the kid you were &amp;<br>the person you're becoming",
+  "shots": [
+   [
+    "f1.jpg",
+    50,
+    0.8
+   ],
+   [
+    "c15.jpg",
+    62,
+    0.8
+   ],
+   [
+    "d17.jpg",
+    40,
+    0.8
+   ]
+  ]
+ },
+ "films": [
+  {
+   "t": "Flavors of Youth",
+   "yr": "2018",
+   "where": "Netflix",
+   "accent": "#C8642E",
+   "line": "the places that raised you, remembered",
+   "imgs": [
+    [
+     "f1.jpg",
+     50
+    ],
+    [
+     "f5.jpg",
+     55
+    ],
+    [
+     "f3.jpg",
+     50
+    ],
+    [
+     "f4.jpg",
+     50
+    ],
+    [
+     "f0.jpg",
+     50
+    ]
+   ],
+   "slide": [
+    [
+     "f1.jpg",
+     50
+    ],
+    [
+     "f3.jpg",
+     55
+    ]
+   ]
+  },
+  {
+   "t": "Clannad",
+   "yr": "2007",
+   "where": "HiDive",
+   "accent": "#C9577A",
+   "line": "from the walk to school to the family you make",
+   "imgs": [
+    [
+     "c0.jpg",
+     45
+    ],
+    [
+     "c15.jpg",
+     55
+    ],
+    [
+     "c32.jpg",
+     45
+    ],
+    [
+     "c4.jpg",
+     50
+    ],
+    [
+     "c46.jpg",
+     50
+    ],
+    [
+     "c21.jpg",
+     50
+    ]
+   ],
+   "slide": [
+    [
+     "c0.jpg",
+     45
+    ],
+    [
+     "c46.jpg",
+     45
+    ]
+   ]
+  },
+  {
+   "t": "100 Meters",
+   "yr": "2025",
+   "where": "Netflix",
+   "accent": "#B8402F",
+   "line": "two boys, one race & everything after",
+   "imgs": [
+    [
+     "m4.jpg",
+     50
+    ],
+    [
+     "m12.jpg",
+     55
+    ],
+    [
+     "m1.jpg",
+     50
+    ],
+    [
+     "m8.jpg",
+     50
+    ],
+    [
+     "m9.jpg",
+     45
+    ],
+    [
+     "m14.jpg",
+     40
+    ]
+   ],
+   "slide": [
+    [
+     "m4.jpg",
+     50
+    ],
+    [
+     "m14.jpg",
+     42
+    ]
+   ]
+  },
+  {
+   "t": "Blue Box",
+   "yr": "2024",
+   "where": "Netflix",
+   "accent": "#3A74AD",
+   "line": "early mornings, a gym &amp; a crush you can't outrun",
+   "imgs": [
+    [
+     "b0.jpg",
+     40
+    ],
+    [
+     "b43.jpg",
+     40
+    ],
+    [
+     "b3.jpg",
+     45
+    ],
+    [
+     "b19.jpg",
+     50
+    ],
+    [
+     "b22.jpg",
+     45
+    ],
+    [
+     "b5.jpg",
+     50
+    ]
+   ],
+   "slide": [
+    [
+     "b43.jpg",
+     45
+    ],
+    [
+     "b3.jpg",
+     48
+    ]
+   ]
+  },
+  {
+   "t": "Digimon Adventure:<br>Last Evolution Kizuna",
+   "fs": 58,
+   "yr": "2020",
+   "where": "rent on Apple TV",
+   "accent": "#D0862A",
+   "line": "when your childhood best friend has to say goodbye",
+   "imgs": [
+    [
+     "d0.jpg",
+     50
+    ],
+    [
+     "d16.jpg",
+     60
+    ],
+    [
+     "d17.jpg",
+     45
+    ],
+    [
+     "d15.jpg",
+     55
+    ],
+    [
+     "d24.jpg",
+     50
+    ],
+    [
+     "d12.jpg",
+     50
+    ]
+   ],
+   "slide": [
+    [
+     "d16.jpg",
+     55
+    ],
+    [
+     "d24.jpg",
+     45
+    ]
+   ]
+  }
+ ],
+ "end_bg": "f1.jpg",
+ "phone": "phone.png",
+ "end_dur": 3.2
+}

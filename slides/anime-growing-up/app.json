@@ -1,0 +1,27 @@
+{
+ "query": "anime about growing up",
+ "intro": "Bittersweet coming-of-age stories about first loves, last summers and the person you're slowly becoming.",
+ "rows": {
+  "Top Results": [
+   "p_fly.jpg",
+   "p_cla.jpg",
+   "p_m100.jpg",
+   "p_bbox.jpg",
+   "p_digi.jpg"
+  ],
+  "Last Days of Being a Kid": [
+   "p2_0.jpg",
+   "p2_1.jpg",
+   "p2_2.jpg",
+   "p2_3.jpg",
+   "p2_4.jpg"
+  ],
+  "First Loves & Goodbyes": [
+   "p3_0.jpg",
+   "p3_1.jpg",
+   "p3_2.jpg",
+   "p3_3.jpg",
+   "p3_4.jpg"
+  ]
+ }
+}
