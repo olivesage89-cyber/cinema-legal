@@ -21,11 +21,11 @@ body{width:1080px;height:1350px;overflow:hidden;position:relative;background:#0B
 .cv .txt{position:absolute;left:0;right:0;top:58px;text-align:center;color:#EFE8DA}
 .kick{font-family:Type;font-weight:700;font-size:23px;letter-spacing:.5em;padding-left:.5em;opacity:.92}
 .hand{font-family:Hand;font-size:70px;line-height:1;margin-top:22px;color:#EFE8DA;transform:rotate(-3deg)}
-.big{font-family:Stencil;font-weight:900;font-size:256px;line-height:.82;letter-spacing:.035em;color:#F59A57;margin-top:4px;
-  text-shadow:0 6px 40px rgba(245,154,87,.22),0 2px 6px rgba(0,0,0,.35)}
+.big{font-family:Stencil;font-weight:900;font-size:256px;line-height:.82;letter-spacing:.035em;color:#F0473B;margin-top:4px;
+  text-shadow:0 6px 40px rgba(240,71,59,.28),0 2px 6px rgba(0,0,0,.35)}
 .sub{font-family:Old;font-style:italic;font-size:35px;margin-top:18px;opacity:.95;text-shadow:0 2px 12px rgba(0,0,0,.6)}
 .foot{position:absolute;left:0;right:0;bottom:54px;text-align:center;font-family:Type;font-weight:700;font-size:21px;letter-spacing:.34em;color:#EFE8DA;opacity:.9;text-shadow:0 1px 8px rgba(0,0,0,.8)}
-.foot b{color:#F59A57}
+.foot b{color:#F0473B}
 /* dossier */
 .desk{position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#2A3138,#151A1F 70%)}
 .folder{position:absolute;left:44px;right:44px;top:96px;bottom:44px;background:#D8C8A2;border-radius:6px 10px 10px 10px;
