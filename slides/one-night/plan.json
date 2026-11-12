@@ -1,0 +1,15 @@
+{"burst":[["c19.jpg",50],["d15.jpg",50],["a29.jpg",40],["f5.jpg",50],["c20.jpg",75],["b3.jpg",45],["f8.jpg",50]],
+"title":{"kick":"MOVIES THAT HAPPEN IN","script":"one","hero":"NIGHT","sub":"sundown to sunrise,<br>and nothing is the same","tag":"9:00 PM → 6:00 AM · 5 FILMS",
+ "shots":[["c20.jpg",74,1.2],["f12.jpg",52,0.9],["a30.jpg",45,1.0]]},
+"films":[
+ {"t":"Superbad","yr":"2007","where":"Paramount+","line":"one party, one fake id, the best night of senior year","clock":["10","14","PM"],"fs":96,
+  "imgs":[["b3.jpg",45,35],["b4.jpg",50,40],["b19.jpg",50,45],["b13.jpg",45,30]]},
+ {"t":"After Hours","yr":"1985","where":"Prime Video","line":"one wrong turn in soho, and the night never lets go","clock":["11","52","PM"],"fs":96,
+  "imgs":[["c20.jpg",70,55],["c6.jpg",55,35],["c19.jpg",45,40],["c22.jpg",40,35],["c28.jpg",50,45]]},
+ {"t":"Adventures in Babysitting","yr":"1987","where":"Disney+","line":"one babysitting gig, one wild ride through chicago","clock":["1","27","AM"],"fs":74,
+  "imgs":[["d15.jpg",50,40],["d3.jpg",50,50],["d23.jpg",45,35],["d24.jpg",50,50],["d13.jpg",50,50]]},
+ {"t":"Night on Earth","yr":"1991","where":"HBO Max","line":"five cities, five taxis, one long night","clock":["3","08","AM"],"fs":92,
+  "imgs":[["f8.jpg",50,50],["f0.jpg",55,40],["f5.jpg",50,40],["f4.jpg",45,40],["f10.jpg",50,40]]},
+ {"t":"Dazed and Confused","yr":"1993","where":"rent on Prime Video","line":"the last night of school, cruising till the sun comes up","clock":["5","46","AM"],"fs":86,
+  "imgs":[["a23.jpg",55,35],["a29.jpg",45,40],["a24.jpg",55,40],["a30.jpg",50,50],["a0.jpg",50,35]]}],
+"end_bg":"f15.jpg","phone":"phone.png","seg":3.4,"end_dur":3.2}
