@@ -39,6 +39,22 @@ with brush overlay, staggered italic serif) — study them, then make new ones.
 Most covers pair 2 fonts: a hero word/phrase in one family + a small kicker/subtitle in a contrasting one.
 Record "font: yellowtail + inter" in used.txt.
 
+## TEXT COVER — slide 1 of EVERY slideshow (user rule, 2026-11-12)
+The cover is no longer a movie image. It is WORDS that grab attention, styled to MATCH the rest of the
+post's slides (same paper/background, colours and fonts as the inside layout you chose), with the words set
+inside a "window" — an arched window, rounded frame, polaroid/card, ticket, film frame… — like the arch in the
+approved "the Mountains" post. Reference: https://getcinema.app/slides/text-cover-ref/anime_window.jpg
+(approved direction); more style refs in slides/text-cover-ref/. Example code: tools/slideshow/textcover/.
+- LABEL above the words, small tracked caps, on EVERY cover of the account:
+  anime = "ANIME HIDDEN GEMS" · motion_scene = "MOVIE HIDDEN GEMS" · ede.nnico = "HIDDEN GEM MOVIES" ·
+  cozy = "COZY MOVIE NIGHT" · vivian = NO label (she must not look like a movie page).
+- WORDS: a short emotional hook, not a plain title. Examples from the user: "if you still believe good people
+  exist — watch these", "anime that teach you: some truths are hard to accept", "keep going. even when nobody
+  notices." Lowercase/sentence case, one accent word in colour/italic, max ~12 words + optional small line.
+- No movie stills on the cover (a subtle texture/pattern/gradient inside the window is fine). Keep "05 FILMS ·
+  SWIPE →" style footer. Vary window shape, colours and fonts post to post; never the same as the previous 2.
+- The post title / caption line 1 = the hook words.
+
 ## Cover vs inside slides
 The COVER is the hook — make it a stunning film-poster image (one gorgeous still, beautiful type, grade, grain).
 The INSIDE slides do NOT have to match the cover's style. Pick one inside layout per slideshow from the library
