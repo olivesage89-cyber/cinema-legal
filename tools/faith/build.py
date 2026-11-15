@@ -14,6 +14,7 @@ spec.json (all paths relative to the spec's folder):
   "moods": "tender,emotional",                                       # music tags (tools/music/library.json)
   "out": "video.mp4"
 }
+Optional 5th caption item = y position (default 760) to keep captions off faces.
 Caption words listed in the 4th item are drawn in yellow (match the word exactly as written, incl. punctuation).
 """
 import json, os, random, subprocess, sys, textwrap, re
@@ -72,8 +73,9 @@ def make(spec_path):
     ov = []
     pix = ImageFont.truetype(FONT_PIX, 48)
     for ci, c in enumerate(s['clips']):
-        for k, (a, b, txt, hl) in enumerate(c.get('captions', [])):
-            p = f'{B}/cap{ci}_{k}.png'; text_png(p, txt, hl, pix, 760); ov.append((p, off[ci] + a, off[ci] + b))
+        for k, cap in enumerate(c.get('captions', [])):
+            a, b, txt, hl = cap[:4]; y = cap[4] if len(cap) > 4 else 760  # optional 5th item: caption y (keep off faces)
+            p = f'{B}/cap{ci}_{k}.png'; text_png(p, txt, hl, pix, y); ov.append((p, off[ci] + a, off[ci] + b))
     hook = ' '.join(s.get('hook', []))
     if hook:
         p = f'{B}/hook.png'; text_png(p, hook, [], ImageFont.truetype(FONT_PIX, 40), 170); ov.append((p, 0, 4.6))
