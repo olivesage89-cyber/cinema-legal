@@ -1,0 +1,17 @@
+{"ink":"#D2C1FF","flash":0.2,"seg":3.4,"pieces":4,
+"burst":[["k1.jpg",48],["t1.jpg",55],["w3.jpg",42],["s2.jpg",50],["j2.jpg",30],["k2.jpg",65],["t6.jpg",50]],
+"title":{"kick":"ANIME THAT MAKE YOU","hero":"fall in love","hero2":"WITH YOUR CITY","sub":"again &mdash; rooftops, train crossings &amp; streets at golden hour","top":230,
+ "shots":[["t1.jpg",55,0.9],["k3.jpg",60,0.8],["s1.jpg",50,0.8],["w1.jpg",38,0.85]]},
+"films":[
+ {"t":"Kiki's Delivery Service","fs":64,"yr":"1989","where":"HBO Max","code":"G01","place":"KORIKO","prev":"HOMETOWN","next":"TAMA HILLS","line_c":"#F39700","text_c":"#1B1E2B",
+  "line":"a new town, a bakery &amp; a broom over the rooftops","imgs":[["k1.jpg",50,50],["k2.jpg",50,45],["k3.jpg",50,62],["k4.jpg",50,50],["k5.jpg",50,50],["k6.jpg",50,55]]},
+ {"t":"Whisper of the Heart","fs":70,"yr":"1995","where":"HBO Max","code":"C02","place":"TAMA HILLS","prev":"KORIKO","next":"OGAKI","line_c":"#00BB85",
+  "line":"the hill road home &amp; the whole city waking up","imgs":[["w1.jpg",50,45],["w2.jpg",50,40],["w3.jpg",50,50],["w4.jpg",50,50],["w5.jpg",50,58],["w6.jpg",50,38]]},
+ {"t":"A Silent Voice","fs":80,"yr":"2016","where":"Crunchyroll","code":"Z03","place":"OGAKI","prev":"TAMA HILLS","next":"OSAKA","line_c":"#8F76D6",
+  "line":"the same bridge every day, until it meant everything","imgs":[["s1.jpg",50,55],["s3.jpg",50,45],["s4.jpg",50,55],["s2.jpg",50,50],["s5.jpg",50,55],["s6.jpg",50,55]]},
+ {"t":"Josee, the Tiger and the Fish","fs":60,"yr":"2020","where":"Crunchyroll","code":"T04","place":"OSAKA","prev":"OGAKI","next":"SHINJUKU","line_c":"#009BBF",
+  "line":"a whole city she'd only ever seen through a window","imgs":[["j1.jpg",50,40],["j2.jpg",50,55],["j4.jpg",50,45],["j5.jpg",50,45]]},
+ {"t":"Weathering With You","fs":70,"yr":"2019","where":"HBO Max","code":"M05","place":"SHINJUKU","prev":"OSAKA","next":"YOUR CITY","line_c":"#F62E36",
+  "line":"tokyo in the rain &amp; the one rooftop where it's sunny","imgs":[["t1.jpg",50,50],["t2.jpg",50,50],["t3.jpg",50,65],["t4.jpg",50,55],["t5.jpg",50,50],["t6.jpg",50,45]]}
+],
+"end_bg":"k3.jpg","end_x":60,"phone":"phone.png","end_dur":3.0}
