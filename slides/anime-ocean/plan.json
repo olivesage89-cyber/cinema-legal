@@ -1,0 +1,245 @@
+{
+ "ink": "#8FE8D8",
+ "flash": 0.2,
+ "seg": 3.4,
+ "pieces": 4,
+ "burst": [
+  [
+   "c1.jpg",
+   50
+  ],
+  [
+   "p28.jpg",
+   50
+  ],
+  [
+   "r16.jpg",
+   55
+  ],
+  [
+   "s2.jpg",
+   50
+  ],
+  [
+   "c8.jpg",
+   50
+  ],
+  [
+   "p34.jpg",
+   50
+  ],
+  [
+   "r3.jpg",
+   50
+  ],
+  [
+   "w0.jpg",
+   62
+  ]
+ ],
+ "title": {
+  "kick": "ANIME THAT FEEL LIKE",
+  "hero": "the ocean",
+  "fs": 190,
+  "sub": "salt wind, deep blue water &amp; something calling from the waves",
+  "foot": "05 ANIME \u00b7 DIVE IN",
+  "shots": [
+   [
+    "c10.jpg",
+    45,
+    0.8
+   ],
+   [
+    "p5.jpg",
+    62,
+    0.8
+   ],
+   [
+    "s20.jpg",
+    55,
+    0.8
+   ],
+   [
+    "r0.jpg",
+    58,
+    0.8
+   ]
+  ]
+ },
+ "films": [
+  {
+   "t": "Children of the Sea",
+   "fs": 80,
+   "yr": "2019",
+   "where": "Apple TV",
+   "accent": "#7FD6F0",
+   "line": "one summer at the aquarium, and a sea that's alive",
+   "imgs": [
+    [
+     "c10.jpg",
+     50
+    ],
+    [
+     "c8.jpg",
+     50
+    ],
+    [
+     "c3.jpg",
+     45
+    ],
+    [
+     "c1.jpg",
+     50
+    ],
+    [
+     "c6.jpg",
+     50
+    ],
+    [
+     "c4.jpg",
+     50
+    ]
+   ]
+  },
+  {
+   "t": "Porco Rosso",
+   "yr": "1992",
+   "where": "HBO Max",
+   "accent": "#FF8A78",
+   "line": "a red seaplane, a hidden cove &amp; the Adriatic to yourself",
+   "imgs": [
+    [
+     "p5.jpg",
+     55
+    ],
+    [
+     "p28.jpg",
+     50
+    ],
+    [
+     "p34.jpg",
+     50
+    ],
+    [
+     "p11.jpg",
+     50
+    ],
+    [
+     "p3.jpg",
+     50
+    ],
+    [
+     "p9.jpg",
+     50
+    ],
+    [
+     "p27.jpg",
+     50
+    ]
+   ]
+  },
+  {
+   "t": "Ride Your Wave",
+   "yr": "2019",
+   "where": "HBO Max",
+   "accent": "#FFB774",
+   "line": "surfboards, sea spray &amp; a love that rides every wave",
+   "imgs": [
+    [
+     "r0.jpg",
+     50
+    ],
+    [
+     "r3.jpg",
+     50
+    ],
+    [
+     "r16.jpg",
+     50
+    ],
+    [
+     "r12.jpg",
+     50
+    ],
+    [
+     "r11.jpg",
+     50
+    ],
+    [
+     "r5.jpg",
+     50
+    ]
+   ]
+  },
+  {
+   "t": "Ocean Waves",
+   "yr": "1993",
+   "where": "HBO Max",
+   "accent": "#F2D38A",
+   "line": "one summer by the sea in kochi, remembered",
+   "imgs": [
+    [
+     "w0.jpg",
+     50
+    ],
+    [
+     "w3.jpg",
+     50
+    ],
+    [
+     "w1.jpg",
+     50
+    ],
+    [
+     "w11.jpg",
+     50
+    ],
+    [
+     "w14.jpg",
+     50
+    ],
+    [
+     "w2.jpg",
+     50
+    ]
+   ]
+  },
+  {
+   "t": "Suzume",
+   "yr": "2022",
+   "where": "Netflix",
+   "accent": "#C9B8FF",
+   "line": "a door on the shore that opens to everywhere",
+   "imgs": [
+    [
+     "s2.jpg",
+     50
+    ],
+    [
+     "s20.jpg",
+     50
+    ],
+    [
+     "s1.jpg",
+     50
+    ],
+    [
+     "s8.jpg",
+     50
+    ],
+    [
+     "s22.jpg",
+     50
+    ],
+    [
+     "s19.jpg",
+     50
+    ]
+   ]
+  }
+ ],
+ "end_bg": "s20.jpg",
+ "end_x": 50,
+ "phone": "phone.png",
+ "end_dur": 3.2
+}
