@@ -116,10 +116,10 @@ def make(spec_path):
         inp += ['-i', p]; fc.append(f"[{last}][{idx}:v]overlay=0:0:enable='between(t,{a:.2f},{b:.2f})'[o{j}]"); last = f'o{j}'; idx += 1
     inp += ['-i', f'{B}/card.png']; fc.append(f"[{last}][{idx}:v]overlay=0:0:enable='gte(t,{t + 0.3:.2f})'[vout]")
     fc.append(f'[{mi}:a]atrim=duration={total:.2f},volume=0.20,afade=t=in:d=1.5,afade=t=out:st={total - 2:.2f}:d=2,aformat=channel_layouts=stereo[mu];'
-              f'[ac][mu]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5[aout]')
+              f'[ac][mu]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5,aresample=44100[aout]')
     out = os.path.join(base, s.get('out', 'video.mp4'))
     subprocess.run(['ffmpeg', '-v', 'error', '-y'] + inp + ['-filter_complex', ';'.join(fc), '-map', '[vout]', '-map', '[aout]',
-                    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '19', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k',
+                    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '19', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-ar', '44100', '-b:a', '192k',
                     '-movflags', '+faststart', out], check=True)
     credit = f"🎵 {track['title']} – Kevin MacLeod (incompetech.com) CC BY 4.0"
     print(json.dumps({'out': out, 'seconds': round(total, 2), 'music': track['title'], 'credit': credit}, ensure_ascii=False))
