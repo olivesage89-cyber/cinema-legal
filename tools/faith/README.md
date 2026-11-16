@@ -14,6 +14,7 @@ Other refs in slides/faith-masters/ (style-only shots, example shots). Other bea
 lavender, cream) may appear as friends/family; the main bean is ALWAYS the yellow one.
 
 ## Content rules (user)
+- Never tie church to a specific day (no "Sunday", "Sunday service", "every Sunday" etc.) — say "church" / "after church" only (user rule 2026-11-16).
 - **Settings lean into NATURE** (user 2026-11-12): meadows, forest stream, misty mountain trail, wildflower
   field, lake at dawn, snowy pine forest, starry sky, rainy hillside, garden, picnic under a tree, sunflower field,
   beach at sunset, autumn park, campfire, riverbank, orchard. Indoors (church, bedroom at night) only now and then

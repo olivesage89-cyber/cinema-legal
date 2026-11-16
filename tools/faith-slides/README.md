@@ -8,6 +8,7 @@ Account: Metricool brand "Anime" (blogId 7680537) → **TikTok cin_seven_ ONLY**
 is the lamb account — NEVER post slideshows there. 4 slideshows a day.
 
 ## Writing rules (from the user)
+- Never tie church to a specific day (no "Sunday", "Sunday service", "every Sunday" etc.) — say "church" / "after church" only (user rule 2026-11-16).
 - Sound like a real person, casual and lowercase, short. If a line sounds like an ad or "AI", rewrite it. The user
   rejected a made-up personal testimonial story ("i moved here in august…") as weird/AI-sounding — use LIST posts.
 - Tips are invitations, never rules or commands about religious practice (the user rejected "actually rest on
