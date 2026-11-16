@@ -1,11 +1,11 @@
-# Faith listicle slideshows — cin_seven_ TikTok (Bible Meet promo) — approved 2026-11-16
+# Faith listicle slideshows — vivian (river.viv Instagram + TikTok) (Bible Meet promo) — approved 2026-11-16
 
 TikTok photo slideshows in the emily_internet_hoarder / Deepstash style: a cover with a list title, then one tip per
 slide over a detailed, warm, cozy photo. The app (Bible Meet, the user's Christian friendship app) appears softly
 in SOME posts, never as an ad. Approved example: https://getcinema.app/slides/faith-slides-ref/grow-closer-preview.jpg
 
-Account: Metricool brand "Anime" (blogId 7680537) → **TikTok cin_seven_ ONLY**. That brand's Instagram (morgan_se_)
-is the lamb account — NEVER post slideshows there. 4 slideshows a day.
+Account (user 2026-11-16): Metricool brand "vivian" (blogId 7694475) → **Instagram river.viv + TikTok river.viv**.
+4 slideshows a day. (Moved from cin_seven_, which now posts the lamb videos. No more Cinema content on vivian.)
 
 ## Writing rules (from the user)
 - Never tie church to a specific day (no "Sunday", "Sunday service", "every Sunday" etc.) — say "church" / "after church" only (user rule 2026-11-16).
@@ -34,7 +34,7 @@ image. Reject photos with garbled big text, odd hands, or faces facing the camer
 `make.py build spec.json` → out/01.jpg… + preview.jpg. LOOK at preview: text readable, not over faces, app card
 neat. Commit the JPGs to slides/faith-slides-<slug>/ and append to slides/faith-slides-used.txt:
 `date | title | tips (short) | app: card/meeting/map/none`. Push; poll https://getcinema.app/slides/faith-slides-<slug>/01.jpg.
-Metricool: createScheduledPost blogId 7680537, providers [tiktok] ONLY, autoPublish:true, draft:false, image URLs
-in order, tiktokData {privacyOption:"PUBLIC_TO_EVERYONE", title:<cover text, ≤90 chars>, autoAddMusic:true,
+Metricool: createScheduledPost blogId 7694475, providers [instagram, tiktok], autoPublish:true, draft:false, image URLs
+in order, instagramData {type:"POST", isAiGenerated:true}, tiktokData {privacyOption:"PUBLIC_TO_EVERYONE", title:<cover text, ≤90 chars>, autoAddMusic:true,
 photoCoverIndex:0}. Caption: the cover line + a short natural line (e.g. "save this for later 🤍") + 4–6 hashtags
 (#christiantiktok #faith #jesus #christiangirl …). No app name in the caption.

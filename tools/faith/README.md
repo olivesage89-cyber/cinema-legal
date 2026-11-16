@@ -7,7 +7,7 @@ https://getcinema.app/slides/faith-lamb-tired/video.mp4 and https://getcinema.ap
 
 | account | Metricool brand (blogId) | post to | character | master (always the reference image) |
 |---|---|---|---|---|
-| lamb | "Anime" brand 7680537 | **Instagram morgan_se_ ONLY** (that brand's TikTok is the anime account — never post faith there) | small white low-poly lamb + low-poly Jesus, stylised indie-game 3D | https://getcinema.app/slides/faith-masters/lamb_master.jpg |
+| lamb | "Anime" brand 7680537 | **Instagram morgan_se_ + TikTok cin_seven_** (user 2026-11-16; no anime anywhere) | small white low-poly lamb + low-poly Jesus, stylised indie-game 3D | https://getcinema.app/slides/faith-masters/lamb_master.jpg |
 | bean | "ede.nnico" brand 7681463 | **Instagram ede.nnico ONLY** (that brand's TikTok is a Cinema account — never post faith there) | soft round YELLOW bean (always yellow), 2D storybook paper-grain pastel; Jesus drawn as a gentle cartoon man (wavy brown hair, short beard, white robe, soft blue sash) | https://getcinema.app/slides/faith-masters/bean_master.jpg |
 
 Other refs in slides/faith-masters/ (style-only shots, example shots). Other bean characters (mint green, pink,
@@ -57,8 +57,10 @@ Grok image prompts can say Jesus.
 ## Post
 Commit video.mp4 to slides/faith-<account>-<slug>/; append to slides/faith-used.txt:
 `date | <account> | struggle | setting | verse ref | music: <title>`; push; poll the getcinema.app URL until 200.
-Metricool: Instagram ONLY, instagramData {type:"REEL", showReelOnFeed:true, isAiGenerated:true},
+Metricool: Instagram REEL instagramData {type:"REEL", showReelOnFeed:true, isAiGenerated:true},
 autoPublish:true, draft:false, videoCoverMilliseconds ~3500 (a frame with the character + hook).
+LAMB only: also a second post to TikTok cin_seven_ (same brand 7680537, same video/caption/time),
+tiktokData {privacyOption:"PUBLIC_TO_EVERYONE", title:<hook>, isAigc:true}.
 Caption: line 1 the hook ("for anyone who's tired today 🤍"); blank line; the verse in quotes + " — Ref";
 blank line; 5–7 hashtags (#jesus #christian #faith #bible #godslove #christiananimation …); LAST line the music
 credit. No app name.
