@@ -3,7 +3,7 @@
   python3 sfx.py <seconds> <out.wav> '<events json>'
   events: [["pop",1.0],["tick_every",0.5,0,13],["buzz",13.0],["ping",13.05],["whoosh",17.35]]
   kinds: pop (bubble/thought appears), ping (notification), buzz (phone vibrate), whoosh (scene change),
-         tick (single clock tick), tick_every <step> <from> <to>"""
+         tick (single clock tick), knock (3 door knocks), tick_every <step> <from> <to>"""
 import sys, json, wave, numpy as np
 sr = 44100
 
@@ -24,7 +24,10 @@ def render(seconds, events):
             t = T(0.6); add(t0 + d0, 0.2 * np.sin(2 * np.pi * f * t) * np.exp(-t * 7))
     def whoosh(t0):
         t = T(0.5); add(t0, np.convolve(rng.standard_normal(len(t)) * 0.06 * np.sin(np.pi * t / 0.5) ** 2, np.ones(30) / 30, 'same'))
-    K = dict(pop=pop, tick=tick, buzz=buzz, ping=ping, whoosh=whoosh)
+    def knock(t0):
+        for k in range(3):
+            t = T(0.12); add(t0 + k * 0.22, 0.5 * np.sin(2 * np.pi * 110 * t) * np.exp(-t * 45) + 0.15 * rng.standard_normal(len(t)) * np.exp(-t * 120))
+    K = dict(knock=knock, pop=pop, tick=tick, buzz=buzz, ping=ping, whoosh=whoosh)
     for e in events:
         if e[0] == 'tick_every':
             step, a, b = e[1:]; x = a
