@@ -3,6 +3,8 @@
 The user saw that her old posts (her face + one small line) got 400–1,000 views while stock-photo faith list
 slideshows got ~280. So: keep HER look and formats exactly like the old posts, but every line is faith-oriented.
 No Cinema, no movies, no film formats (A/B/C/D), anywhere — not in slides, captions or app slides.
+SLIDES ONLY (user, 2026-11-17): no videos on river.viv at all — every post is a photo slideshow (FQ is a still
+photo slide made from a quotevid.py candidate, never the video steps).
 Formats (rotate; check slides/used.txt for her last posts):
 - FE. RELATABLE FAITH (main, ~2 of every 4 posts): exactly format E (lazy low-angle front-camera selfie, face in the bottom
   third, empty top 2/3, flat dull light, small TikTok-style navy text, relgen.py + render_rel.js), with original,
