@@ -1,3 +1,6 @@
+> NOTE (user 2026-11-17): river.viv no longer posts these stock-photo listicles. Vivian posts her own-face faith
+> formats instead — see tools/slideshow/vivian/README.md "FAITH MODE".
+
 # Faith listicle slideshows — vivian (river.viv Instagram + TikTok) (Bible Meet promo) — approved 2026-11-16
 
 TikTok photo slideshows in the emily_internet_hoarder / Deepstash style: a cover with a list title, then one tip per

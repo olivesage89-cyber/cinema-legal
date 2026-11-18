@@ -1,4 +1,30 @@
 # Vivian — influencer slideshows (Metricool brand "vivian", IG river.viv, TikTok Vivian)
+## FAITH MODE (user, 2026-11-17) — river.viv is now a Christian girl's account. THIS OVERRIDES EVERYTHING ABOVE.
+The user saw that her old posts (her face + one small line) got 400–1,000 views while stock-photo faith list
+slideshows got ~280. So: keep HER look and formats exactly like the old posts, but every line is faith-oriented.
+No Cinema, no movies, no film formats (A/B/C/D), anywhere — not in slides, captions or app slides.
+Formats (rotate; check slides/used.txt for her last posts):
+- FE. RELATABLE FAITH (main, ~2 of every 4 posts): exactly format E (lazy low-angle front-camera selfie, face in the bottom
+  third, empty top 2/3, flat dull light, small TikTok-style navy text, relgen.py + render_rel.js), with original,
+  honest, a little funny Christian-girl lines. Examples of the voice: "me telling God i trust him and then planning
+  every possible outcome anyway", "said i'd read one chapter before bed. its 1am and im in leviticus", "praying for
+  patience but like. right now", "i want a friend who'll pray for me and also go get tacos". Build structure (3–5
+  slides, same photo, last slide flips it) or 1 slide. Never mocking God, the Bible or church; the joke is always on her.
+- FQ. QUOTE CLOSE-UP (~1 of every 4): exactly the old quote-post look (quotevid.py cand → tight, moody close-up, soft
+  yellow #F6E58D line centred ~70%, 1 slide), with a heartfelt faith line in her voice: "i stopped asking God why it
+  happened and started asking what now", "some prayers took years. im still glad i kept praying them".
+- FE-APP (~1 of every 4; if her last 3 faith posts had no app, make this one): a 3–5 slide FE build about being lonely
+  as a Christian in a new city / college / after church, ending with what she does about it tonight → last slide =
+  Bible Meet on a phone over her heavily blurred, darkened photo, NO text: use the real app screens
+  tools/faith-slides/assets/screen_map.png or screen_meeting.png in an iPhone frame (no Cinema appshot). e.g. "moved
+  here in august / still dont know a single christian / not sitting home alone again this week / [Bible Meet]".
+Rules: never name a specific day for church (say "church", "after church"); never preachy, never telling people what
+they must do; lowercase, lazy punctuation; read every line out loud — if it sounds like a quote account, a sermon or an
+ad, rewrite. Identity: only use photos that clearly match ref_face.jpg.
+Caption: tiny, her voice ("hi lol", "be honest", "anyway", "not me", "amen?") + #christiangirl #faith #fyp #relatable
+(+1). Never the app name in the caption.
+Log each post in slides/used.txt: "date | vivian FAITH | FE/FQ/FE-APP | lines (short) | photo note".
+
 Vivian = a consistent AI girl (Higgsfield character "Vivian v2", id in vivgen.py). Faceless? NO — her face is shown; it's always the same trained character.
 Format (approved 2026-10-27, slides/vivian-keeper-test/):
 1. Slide 1 = a NEW photo of Vivian (vivgen.py) in a fitting everyday place (bed, car, couch, café, kitchen, mirror, park, bookstore, cinema seat…) + a bold first-person hook, lowercase TikTok voice.
