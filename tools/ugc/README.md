@@ -2,7 +2,7 @@
 "cozy" is only the account's nickname; nothing to do with the content. NO Cinema / movies on this account any more.
 Style: TikTok @yeetyghost (same guy, same kitchen, phone propped on the counter, whole body, ~7s, he sways/grooves to
 music, sips a drink, half smile, never talks) + text like @ozono20 (a short heartfelt paragraph), but faith-oriented.
-Approved samples: guy/sample_navy.mp4, guy/sample_cream.mp4. Character refs: guy/ref_kitchen_*.jpg (SAME guy every video).
+Approved samples (for the LOOK only — their text is old, romance lines are banned): guy/sample_navy.mp4, guy/sample_cream.mp4. Character refs: guy/ref_kitchen_*.jpg (SAME guy every video).
 
 ## Build one video
 1. Line: `python3 line.py guy ../../slides/used.txt` (ChatGPT gpt-5, key OPENAI_KEY_FILE) → pick the best or edit it.
