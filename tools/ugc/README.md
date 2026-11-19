@@ -8,7 +8,8 @@ Approved samples: guy/sample_navy.mp4, guy/sample_cream.mp4. Character refs: guy
 1. Line: `python3 line.py guy ../../slides/used.txt` (ChatGPT gpt-5, key OPENAI_KEY_FILE) → pick the best or edit it.
    Must sound like a real early-20s Christian guy: plain, sincere, warm, never preachy/telling people what to do, never
    mocking, no church day, no app name, no clever poetic metaphors. Shapes: "the older i get…", "if…, why…? maybe…",
-   "there's this girl… she's reading this right now", "i'm single because…", "someone said: '…' and i really felt that".
+   "someone said: '…' and i really felt that", "nobody talks about how…". NEVER dating/romance/singleness/"there's this girl"
+   (user 2026-11-18: Bible Meet is a friendship app, not a dating app) — faith life, friends, brotherhood, loneliness, church.
 2. Start frame (GEMINI_KEY_FILE): `python3 gimg.py f.png "Same guy as the reference photo (same face, hair, light moustache),
    same small apartment kitchen, same camera position: phone propped on the counter filming his whole body. Now he wears
    <new outfit>, holding <drink>, <spot/pose>. No phone visible in frame. Real, unedited iPhone photo, vertical 9:16"

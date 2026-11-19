@@ -18,10 +18,10 @@ LINES (the most important part): get 8 candidates from ChatGPT with `python3 too
   think "that's me" and save/share it. Three kinds, rotate:
   - confession: "i could be mad at God and still talk to him every single night", "i lied i still cry every time
     they sing that one song at church", "i pray for people who will never know i did"
-  - "the day a man…/when he's a … type": "the day a man asks what God's been teaching me lately is the day ive found
-    my husband", "when he's a 'can i pray for you' type instead of a 'that sucks' type"
+  - quiet hope: "i just want friends i can pray with and also laugh with"
   - "you deserve…": "you deserve friends who pray for you by name"
-  Faith themes: prayer, trusting God, church, worship, wanting a godly man, christian friendships, loneliness, healing.
+  Faith themes: prayer, trusting God, church, worship, christian friendships, loneliness, new city/college, healing.
+  NEVER dating/romance/boyfriend/husband lines (user 2026-11-18: Bible Meet is a friendship app, not a dating app).
   Never preachy, never telling people what they must do, never mocking God/the Bible/church. Never name a church day.
   Never copy shh's lines — only the shapes. If it sounds like a quote account, a sermon, an ad or a joke, rewrite.
 POSTS (mix): ~3 of 4 = ONE slide, one line (her biggest posts are single slides).
