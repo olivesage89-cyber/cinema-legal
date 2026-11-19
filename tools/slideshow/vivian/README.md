@@ -13,7 +13,8 @@ PLACES — rotate, never the same place twice in a row (check used.txt): her bed
 PHOTOS: relgen.py cand W "<place + light>, <what fills the empty top>" → pick a clear ref_face match with NO white/flat
   padding or seams (Higgsfield sometimes pads the top — reject those; or crop to the real part if the 4:5 crop is clean)
   → ALWAYS relgen.py grain cand_N.jpg p.jpg (0.93–0.96) → render_rel.js with y:100 so her eyes show.
-LINES (the most important part): SINCERE, never jokes or memes. Short, lowercase, lazy punctuation, girls read it and
+LINES (the most important part): get 8 candidates from ChatGPT with `python3 tools/ugc/line.py vivian slides/used.txt`
+  (key OPENAI_KEY_FILE) and pick/edit the best one — you still own the quality.  SINCERE, never jokes or memes. Short, lowercase, lazy punctuation, girls read it and
   think "that's me" and save/share it. Three kinds, rotate:
   - confession: "i could be mad at God and still talk to him every single night", "i lied i still cry every time
     they sing that one song at church", "i pray for people who will never know i did"

@@ -11,7 +11,7 @@ Shapes that work: "the older i get, the more i realize…"; "if…, why…? mayb
 gentle reassurance ("no one is too far gone…"). Mostly about faith + relationships, wanting a godly partner, friendship, loneliness, healing, trusting God.""",
  'vivian': """You write the one small line on a Christian girl's TikTok photo (about 21; like @secret_shitz but faith-oriented).
 Three kinds: confession ("i could be mad at God and still talk to him every night"); "the day a man…/when he's a … type";
-"you deserve…". Also question posts to "my sisters in Christ" that start a friendly debate, and short prayers ("God, …").""",
+"you deserve…".""",
 }[who]
 prompt = STYLE + """
 Rules: lowercase (except God/Jesus/Christ/Bible), lazy punctuation, sincere, warm, never preachy, never telling people what they must do,
